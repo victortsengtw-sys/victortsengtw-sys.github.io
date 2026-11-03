@@ -167,7 +167,7 @@ def autolink(html, slug, lang):
         parts[i] = text
     out = "".join(parts)
     out = re.sub(r"\x00(\d+)\x00", lambda m: ph[int(m.group(1))], out)
-    return out + tail
+    return out + tail, made
 
 
 def figure(slug, lang):
@@ -183,8 +183,28 @@ def figure(slug, lang):
             f'<figcaption><span>{cap}</span><span class="cr">{credit}</span></figcaption></figure>')
 
 
+FURTHER = {"zh": "延伸閱讀", "en": "Further reading", "fr": "Pour aller plus loin"}
+
+
+def further(slug, lang, exclude, need):
+    key = cat_key(NOTES[slug][lang])
+    pool = [s_ for s_ in NOTES if s_ != slug and s_ not in exclude and cat_key(next(iter(NOTES[s_].values()))) == key]
+    pool += [s_ for s_ in NOTES if s_ != slug and s_ not in exclude and s_ not in pool]
+    # spread choices so different articles suggest different reads
+    off = sum(map(ord, slug)) % max(1, len(pool))
+    picks = (pool[off:] + pool[:off])[:need]
+    items = "".join(f'<li><a class="il" href="{note_path(lang if lang in NOTES[t] else next(iter(NOTES[t])), t)}">{e(note_for(t, lang)["title"])}</a></li>' for t in picks)
+    return f'<aside class="further"><p class="cap">{FURTHER[lang]}</p><ul>{items}</ul></aside>'
+
+
 def enrich(slug, lang, html):
-    html = autolink(html, slug, lang)
+    html, made = autolink(html, slug, lang)
+    box = further(slug, lang, set(made), max(3, 5 - len(made)))
+    cut = html.find("<hr")
+    body, tail = (html[:cut], html[cut:]) if cut >= 0 else (html, "")
+    k = body.rfind("<h2")
+    body = body[:k] + box + body[k:] if k > 0 else body + box
+    html = body + tail
     fig = figure(slug, lang)
     if fig:
         k = html.find("<h2")

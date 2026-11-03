@@ -1,0 +1,10 @@
+const { chromium } = require('playwright'); const http=require('http'),fs=require('fs'),path=require('path');
+const root='/home/claude/site4'; const T={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.jpg':'image/jpeg','.webp':'image/webp','.png':'image/png'};
+const srv=http.createServer((q,r)=>{let p=decodeURIComponent(q.url.split('?')[0]);if(p.endsWith('/'))p+='index.html';fs.readFile(path.join(root,p),(e,d)=>{if(e){r.writeHead(404);r.end();return}r.writeHead(200,{'content-type':T[path.extname(p)]||'text/plain'});r.end(d)})}).listen(8768);
+const [url,sel,out,wd]=process.argv.slice(2);
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:+wd||390,height:844}});
+await p.route(/fonts\./,r=>r.abort()); await p.goto('http://localhost:8768'+url); await p.waitForTimeout(400);
+await p.evaluate(()=>{document.querySelectorAll('.rv').forEach(x=>x.classList.add('in'));document.querySelector('.hero')&&document.querySelector('.hero').classList.add('ld')});
+await p.waitForTimeout(3400);
+if(sel==='fold') await p.screenshot({path:out}); else await (await p.$(sel)).screenshot({path:out});
+await b.close();srv.close();})();

@@ -1,0 +1,13 @@
+const { chromium } = require('playwright'); const http=require('http'),fs=require('fs'),path=require('path');
+const root='/home/claude/site4'; const T={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.jpg':'image/jpeg','.webp':'image/webp'};
+const srv=http.createServer((q,r)=>{let p=decodeURIComponent(q.url.split('?')[0]);if(p.endsWith('/'))p+='index.html';fs.readFile(path.join(root,p),(e,d)=>{if(e){r.writeHead(404);r.end();return}r.writeHead(200,{'content-type':T[path.extname(p)]||'text/plain'});r.end(d)})}).listen(8769);
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:390,height:844}});const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await p.route(/fonts\./,r=>r.abort());await p.goto('http://localhost:8769/notes/cote-divoire-exports/');
+await p.evaluate(()=>scrollTo(0,500));await p.waitForTimeout(600);
+const s1=await p.evaluate(()=>[scrollY,document.querySelector('.totop').className,document.querySelector('.fab-t').textContent]);
+await p.screenshot({path:'/home/claude/shots4/fab-down.png'});
+await p.click('.totop');await p.waitForTimeout(1200);const y2=await p.evaluate(()=>scrollY);
+await p.evaluate(()=>scrollTo(0,document.body.scrollHeight));await p.waitForTimeout(600);
+const s3=await p.evaluate(()=>[document.querySelector('.totop').className,document.querySelector('.fab-t').textContent]);
+await p.click('.totop');await p.waitForTimeout(1500);const y4=await p.evaluate(()=>scrollY);
+console.log(s1,y2,s3,y4,errs);await b.close();srv.close();})();

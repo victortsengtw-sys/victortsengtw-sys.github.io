@@ -1,89 +1,575 @@
 {
-  "what-is-ohada": ["OHADA"],
-  "uemoa-and-ecowas": ["UEMOA", "ECOWAS", "CEDEAO"],
-  "brvm-stock-exchange": ["BRVM"],
-  "trademark-oapi": ["OAPI"],
-  "product-standards-codinorm": ["CODINORM"],
-  "import-procedures": ["GUCE"],
-  "setting-up-in-cote-divoire": ["CEPICI"],
-  "banking-system": ["BCEAO"],
-  "labor-law-basics": ["CNPS"],
-  "special-economic-zones": ["VITIB"],
-  "national-development-plan": ["國家發展計畫", "National Development Plan", "Plan national de développement"],
-  "investment-code": ["投資法", "Investment Code", "Code des investissements", "code des investissements"],
-  "abidjan-and-san-pedro-ports": ["聖佩德羅港", "阿比讓港", "Port of Abidjan", "port d'Abidjan", "port de San Pedro"],
-  "abidjan-metro-infrastructure": ["阿比讓地鐵", "Abidjan Metro", "métro d'Abidjan"],
-  "cashew-processing": ["腰果加工", "cashew processing", "transformation de l'anacarde"],
-  "korhogo-cloth": ["Korhogo 布", "Korhogo cloth", "toile de Korhogo", "toiles de Korhogo"],
-  "korhogo-city": ["Korhogo"],
-  "baoule-sculpture": ["Baoulé 雕刻", "Baule sculpture", "sculpture baoulé"],
-  "ivorian-ethnic-groups": ["Baoulé", "Baule"],
-  "akan-goldweights": ["金砝碼", "goldweights", "poids à peser l'or"],
-  "akan-gold-jewelry": ["金飾", "gold jewellery", "bijoux en or"],
-  "akan-day-names": ["星期名字", "day names", "prénoms du jour"],
-  "strip-weaving": ["窄幅織布", "strip-woven", "strip weaving", "tissage en bandes"],
-  "wax-print-history": ["蠟染布", "wax print", "pagne wax"],
-  "uniwax": ["Uniwax"],
-  "dan-masks": ["Dan 面具", "Dan mask", "masque dan", "masques dan"],
-  "we-masks": ["Wè", "Guéré"],
-  "zaouli-dance": ["Zaouli"],
-  "senufo-art": ["Senufo", "Sénoufo", "Senoufo"],
-  "senufo-balafon": ["balafon", "巴拉豐"],
-  "talking-drum-restitution": ["Djidji Ayokwè"],
-  "musee-des-civilisations": ["文明博物館", "Musée des Civilisations"],
-  "bruly-bouabre": ["Bruly Bouabré"],
-  "masa-festival": ["MASA"],
-  "zouglou": ["zouglou", "Zouglou"],
-  "ivorian-reggae": ["Alpha Blondy", "Tiken Jah Fakoly"],
-  "ivorian-literature": ["Ahmadou Kourouma", "Kourouma"],
-  "aya-de-yopougon": ["Aya de Yopougon"],
-  "abidjan-modernist-architecture": ["La Pyramide", "Hôtel Ivoire"],
-  "ivorian-food-primer": ["attiéké", "garba", "alloco", "placali", "foutou"],
-  "kedjenou": ["kedjenou", "Kedjenou"],
-  "what-is-a-maquis": ["maquis"],
-  "ivorian-drinks": ["bissap", "gnamakoudji", "bangui"],
-  "ivorian-coffee": ["羅布斯塔", "robusta"],
-  "assinie": ["Assinie"],
-  "grand-bassam": ["大巴薩姆", "Grand-Bassam"],
-  "yamoussoukro": ["亞穆蘇克羅", "Yamoussoukro"],
-  "tai-national-park": ["塔伊國家公園", "Taï National Park", "parc national de Taï"],
-  "comoe-national-park": ["科莫埃", "Comoé"],
-  "banco-national-park": ["Banco 國家公園", "Banco National Park", "parc national du Banco"],
-  "man-region": ["Dent de Man"],
-  "sassandra": ["Sassandra"],
-  "abissa-festival": ["Abissa"],
-  "fete-des-masques": ["面具節", "fête des masques"],
-  "paquinou": ["Pâquinou", "Paquinou"],
-  "ivorian-football": ["非洲國家盃", "Africa Cup of Nations", "Coupe d'Afrique des nations"],
-  "ivorian-public-holidays": ["國定假日", "public holidays", "jours fériés"],
-  "climate-and-seasons": ["雨季", "rainy season", "saison des pluies"],
-  "abidjan-transport": ["woro-woro", "gbaka"],
-  "sim-and-mobile-data": ["SIM 卡", "SIM card", "carte SIM"],
-  "abidjan-markets": ["Treichville", "Adjamé"],
-  "ivorian-weddings": ["la dot", "傳統婚"],
-  "dioula-trade-language": ["Dioula", "迪烏拉語"],
-  "french-business-email": ["Cordialement", "Veuillez agréer"],
-  "tu-or-vous": ["vouvoiement", "tutoiement"],
-  "french-business-titles": ["PDG", "PCA"],
-  "religion-and-business-dining": ["齋戒月", "Ramadan"],
-  "hofstede-west-africa": ["Hofstede"],
-  "francophone-africa-map": ["法語非洲", "francophone Africa", "Afrique francophone"],
-  "working-with-interpreters": ["口譯", "interpreters", "interprètes"],
-  "french-meeting-vocabulary": ["ordre du jour", "compte rendu"],
-  "french-contract-vocabulary": ["devis", "bon de commande", "facture proforma"],
-  "telecom-market": ["MTN", "Moov Africa"],
-  "retail-market": ["購物中心", "shopping malls", "centres commerciaux"],
-  "electricity-sector": ["電力出口", "electricity exports", "exportations d'électricité"],
-  "economy-at-a-glance": ["國內生產毛額", "GDP", "PIB"],
-  "tourism-strategy": ["Sublime Côte d'Ivoire"],
-  "trade-fairs": ["SARA"],
-  "public-procurement": ["政府採購", "public procurement", "marchés publics"],
-  "chiefs-and-villages": ["傳統首領", "traditional chiefs", "chefs traditionnels"],
-  "business-gift-giving": ["送禮", "gift-giving", "cadeaux d'affaires"],
-  "business-dress-code": ["pagne"],
-  "right-hand-etiquette": ["右手", "right hand", "main droite"],
-  "hierarchy-and-elders": ["長輩", "elders", "aînés"],
-  "art-buying-etiquette": ["文化資產", "cultural property", "biens culturels"],
-  "ivorian-cinema": ["FESPACO"],
-  "startup-ecosystem": ["新創生態", "start-up ecosystem"]
+ "what-is-ohada": [
+  "OHADA"
+ ],
+ "uemoa-and-ecowas": [
+  "UEMOA",
+  "ECOWAS",
+  "CEDEAO",
+  "西非",
+  "West Africa",
+  "Afrique de l'Ouest"
+ ],
+ "brvm-stock-exchange": [
+  "BRVM"
+ ],
+ "trademark-oapi": [
+  "OAPI"
+ ],
+ "product-standards-codinorm": [
+  "CODINORM"
+ ],
+ "import-procedures": [
+  "GUCE",
+  "海關",
+  "customs",
+  "douane",
+  "douanes"
+ ],
+ "setting-up-in-cote-divoire": [
+  "CEPICI",
+  "SARL",
+  "設立公司",
+  "company registration"
+ ],
+ "banking-system": [
+  "BCEAO",
+  "西非法郎",
+  "CFA franc",
+  "franc CFA",
+  "銀行",
+  "banks",
+  "banques"
+ ],
+ "labor-law-basics": [
+  "CNPS"
+ ],
+ "special-economic-zones": [
+  "VITIB"
+ ],
+ "national-development-plan": [
+  "國家發展計畫",
+  "National Development Plan",
+  "Plan national de développement"
+ ],
+ "investment-code": [
+  "投資法",
+  "Investment Code",
+  "Code des investissements",
+  "code des investissements",
+  "投資",
+  "investment",
+  "investissement",
+  "investissements"
+ ],
+ "abidjan-and-san-pedro-ports": [
+  "聖佩德羅港",
+  "阿比讓港",
+  "Port of Abidjan",
+  "port d'Abidjan",
+  "port de San Pedro",
+  "港口",
+  "ports"
+ ],
+ "abidjan-metro-infrastructure": [
+  "阿比讓地鐵",
+  "Abidjan Metro",
+  "métro d'Abidjan"
+ ],
+ "cashew-processing": [
+  "腰果加工",
+  "cashew processing",
+  "transformation de l'anacarde",
+  "cashew",
+  "anacarde"
+ ],
+ "korhogo-cloth": [
+  "Korhogo 布",
+  "Korhogo cloth",
+  "toile de Korhogo",
+  "toiles de Korhogo",
+  "手繪布"
+ ],
+ "korhogo-city": [
+  "Korhogo"
+ ],
+ "baoule-sculpture": [
+  "Baoulé 雕刻",
+  "Baule sculpture",
+  "sculpture baoulé",
+  "雕刻",
+  "sculpture",
+  "sculptures"
+ ],
+ "ivorian-ethnic-groups": [
+  "Baoulé",
+  "Baule",
+  "Akan",
+  "族群",
+  "ethnic groups",
+  "groupes ethniques"
+ ],
+ "akan-goldweights": [
+  "金砝碼",
+  "goldweights",
+  "poids à peser l'or",
+  "黃金",
+  "gold"
+ ],
+ "akan-gold-jewelry": [
+  "金飾",
+  "gold jewellery",
+  "bijoux en or"
+ ],
+ "akan-day-names": [
+  "星期名字",
+  "day names",
+  "prénoms du jour"
+ ],
+ "strip-weaving": [
+  "窄幅織布",
+  "strip-woven",
+  "strip weaving",
+  "tissage en bandes",
+  "織布",
+  "textiles",
+  "textile",
+  "tissu",
+  "tissus"
+ ],
+ "wax-print-history": [
+  "蠟染布",
+  "wax print",
+  "pagne wax"
+ ],
+ "uniwax": [
+  "Uniwax"
+ ],
+ "dan-masks": [
+  "Dan 面具",
+  "Dan mask",
+  "masque dan",
+  "masques dan",
+  "面具",
+  "masks",
+  "masques"
+ ],
+ "we-masks": [
+  "Wè",
+  "Guéré"
+ ],
+ "zaouli-dance": [
+  "Zaouli"
+ ],
+ "senufo-art": [
+  "Senufo",
+  "Sénoufo",
+  "Senoufo",
+  "Poro"
+ ],
+ "senufo-balafon": [
+  "balafon",
+  "巴拉豐"
+ ],
+ "talking-drum-restitution": [
+  "Djidji Ayokwè"
+ ],
+ "musee-des-civilisations": [
+  "文明博物館",
+  "Musée des Civilisations",
+  "博物館",
+  "museum",
+  "museums",
+  "musée",
+  "musées"
+ ],
+ "bruly-bouabre": [
+  "Bruly Bouabré"
+ ],
+ "masa-festival": [
+  "MASA"
+ ],
+ "zouglou": [
+  "zouglou",
+  "Zouglou",
+  "音樂",
+  "music",
+  "musique"
+ ],
+ "ivorian-reggae": [
+  "Alpha Blondy",
+  "Tiken Jah Fakoly"
+ ],
+ "ivorian-literature": [
+  "Ahmadou Kourouma",
+  "Kourouma",
+  "文學",
+  "literature",
+  "littérature"
+ ],
+ "aya-de-yopougon": [
+  "Aya de Yopougon"
+ ],
+ "abidjan-modernist-architecture": [
+  "La Pyramide",
+  "Hôtel Ivoire",
+  "建築",
+  "architecture",
+  "Plateau"
+ ],
+ "ivorian-food-primer": [
+  "attiéké",
+  "garba",
+  "alloco",
+  "placali",
+  "foutou"
+ ],
+ "kedjenou": [
+  "kedjenou",
+  "Kedjenou"
+ ],
+ "what-is-a-maquis": [
+  "maquis",
+  "餐廳",
+  "restaurants",
+  "restaurant"
+ ],
+ "ivorian-drinks": [
+  "bissap",
+  "gnamakoudji",
+  "bangui",
+  "飲料",
+  "drinks",
+  "boissons"
+ ],
+ "ivorian-coffee": [
+  "羅布斯塔",
+  "robusta",
+  "咖啡",
+  "coffee",
+  "café"
+ ],
+ "assinie": [
+  "Assinie",
+  "海灘",
+  "beach",
+  "beaches",
+  "plage",
+  "plages"
+ ],
+ "grand-bassam": [
+  "大巴薩姆",
+  "Grand-Bassam",
+  "世界遺產",
+  "World Heritage",
+  "patrimoine mondial"
+ ],
+ "yamoussoukro": [
+  "亞穆蘇克羅",
+  "Yamoussoukro"
+ ],
+ "tai-national-park": [
+  "塔伊國家公園",
+  "Taï National Park",
+  "parc national de Taï",
+  "國家公園",
+  "national park",
+  "parc national"
+ ],
+ "comoe-national-park": [
+  "科莫埃",
+  "Comoé"
+ ],
+ "banco-national-park": [
+  "Banco 國家公園",
+  "Banco National Park",
+  "parc national du Banco"
+ ],
+ "man-region": [
+  "Dent de Man"
+ ],
+ "sassandra": [
+  "Sassandra"
+ ],
+ "abissa-festival": [
+  "Abissa"
+ ],
+ "fete-des-masques": [
+  "面具節",
+  "fête des masques"
+ ],
+ "paquinou": [
+  "Pâquinou",
+  "Paquinou"
+ ],
+ "ivorian-football": [
+  "非洲國家盃",
+  "Africa Cup of Nations",
+  "Coupe d'Afrique des nations",
+  "足球",
+  "football"
+ ],
+ "ivorian-public-holidays": [
+  "國定假日",
+  "public holidays",
+  "jours fériés",
+  "節日",
+  "holidays",
+  "fêtes"
+ ],
+ "climate-and-seasons": [
+  "雨季",
+  "rainy season",
+  "saison des pluies",
+  "氣候",
+  "climate",
+  "climat"
+ ],
+ "abidjan-transport": [
+  "woro-woro",
+  "gbaka",
+  "計程車",
+  "交通",
+  "taxis",
+  "taxi",
+  "transport"
+ ],
+ "sim-and-mobile-data": [
+  "SIM 卡",
+  "SIM card",
+  "carte SIM"
+ ],
+ "abidjan-markets": [
+  "Treichville",
+  "Adjamé",
+  "市集",
+  "marketplaces",
+  "marchés"
+ ],
+ "ivorian-weddings": [
+  "la dot",
+  "傳統婚",
+  "婚禮",
+  "wedding",
+  "weddings",
+  "mariage",
+  "mariages"
+ ],
+ "dioula-trade-language": [
+  "Dioula",
+  "迪烏拉語",
+  "語言",
+  "languages",
+  "langues"
+ ],
+ "french-business-email": [
+  "Cordialement",
+  "Veuillez agréer",
+  "Email",
+  "e-mail",
+  "email"
+ ],
+ "tu-or-vous": [
+  "vouvoiement",
+  "tutoiement"
+ ],
+ "french-business-titles": [
+  "PDG",
+  "PCA",
+  "名片",
+  "business card",
+  "carte de visite"
+ ],
+ "religion-and-business-dining": [
+  "齋戒月",
+  "Ramadan",
+  "伊斯蘭",
+  "穆斯林",
+  "Muslim",
+  "musulman",
+  "musulmans"
+ ],
+ "hofstede-west-africa": [
+  "Hofstede"
+ ],
+ "francophone-africa-map": [
+  "法語非洲",
+  "francophone Africa",
+  "Afrique francophone",
+  "法語",
+  "French-speaking",
+  "francophone"
+ ],
+ "working-with-interpreters": [
+  "口譯",
+  "interpreters",
+  "interprètes",
+  "翻譯",
+  "translation",
+  "traduction"
+ ],
+ "french-meeting-vocabulary": [
+  "ordre du jour",
+  "compte rendu"
+ ],
+ "french-contract-vocabulary": [
+  "devis",
+  "bon de commande",
+  "facture proforma",
+  "合約",
+  "contract",
+  "contrat"
+ ],
+ "telecom-market": [
+  "MTN",
+  "Moov Africa",
+  "電信",
+  "telecom",
+  "télécoms",
+  "télécommunications"
+ ],
+ "retail-market": [
+  "購物中心",
+  "shopping malls",
+  "centres commerciaux",
+  "零售",
+  "超市",
+  "retail",
+  "supermarkets",
+  "supermarchés",
+  "grande distribution"
+ ],
+ "electricity-sector": [
+  "電力出口",
+  "electricity exports",
+  "exportations d'électricité",
+  "電力",
+  "electricity",
+  "électricité"
+ ],
+ "economy-at-a-glance": [
+  "國內生產毛額",
+  "GDP",
+  "PIB",
+  "經濟",
+  "economy",
+  "économie",
+  "économique"
+ ],
+ "tourism-strategy": [
+  "Sublime Côte d'Ivoire",
+  "觀光",
+  "tourism",
+  "tourisme"
+ ],
+ "trade-fairs": [
+  "SARA"
+ ],
+ "public-procurement": [
+  "政府採購",
+  "public procurement",
+  "marchés publics"
+ ],
+ "chiefs-and-villages": [
+  "傳統首領",
+  "traditional chiefs",
+  "chefs traditionnels"
+ ],
+ "business-gift-giving": [
+  "送禮",
+  "gift-giving",
+  "cadeaux d'affaires",
+  "禮物",
+  "gift",
+  "cadeau",
+  "cadeaux"
+ ],
+ "business-dress-code": [
+  "pagne"
+ ],
+ "right-hand-etiquette": [
+  "右手",
+  "right hand",
+  "main droite"
+ ],
+ "hierarchy-and-elders": [
+  "長輩",
+  "elders",
+  "aînés",
+  "階層",
+  "hierarchy",
+  "hiérarchie"
+ ],
+ "art-buying-etiquette": [
+  "文化資產",
+  "cultural property",
+  "biens culturels"
+ ],
+ "ivorian-cinema": [
+  "FESPACO",
+  "電影",
+  "cinema",
+  "film",
+  "films",
+  "cinéma"
+ ],
+ "startup-ecosystem": [
+  "新創生態",
+  "start-up ecosystem",
+  "新創",
+  "start-ups",
+  "startups"
+ ],
+ "cote-divoire-exports": [
+  "可可產地",
+  "cocoa producer",
+  "producteur mondial de cacao",
+  "腰果",
+  "橡膠",
+  "rubber",
+  "caoutchouc"
+ ],
+ "greetings-in-cote-divoire": [
+  "握手",
+  "打招呼",
+  "handshake",
+  "poignée de main"
+ ],
+ "tax-system-overview": [
+  "稅",
+  "tax",
+  "taxes",
+  "impôt",
+  "impôts"
+ ],
+ "meeting-protocol": [
+  "會議",
+  "meeting",
+  "meetings",
+  "réunion",
+  "réunions"
+ ],
+ "photography-etiquette": [
+  "拍照",
+  "photos",
+  "photographies"
+ ],
+ "condolences-and-funerals": [
+  "葬禮",
+  "funeral",
+  "funerals",
+  "funérailles"
+ ],
+ "hotel-and-stay": [
+  "飯店",
+  "住宿",
+  "hotels",
+  "hotel",
+  "hôtels",
+  "hôtel"
+ ],
+ "french-numbers-dates": [
+  "日期",
+  "dates"
+ ]
 }

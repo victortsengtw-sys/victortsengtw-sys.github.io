@@ -381,6 +381,12 @@ ul,ol{list-style:none;margin:0;padding:0}
 .ft-c a{border-bottom:1px solid var(--line2)}
 .ft-c a:hover{color:var(--ink)}
 
+.further{margin:2.2em 0 .6em;padding:20px 22px;background:var(--paper);border-left:2px solid var(--gold)}
+.further .cap{color:var(--gold);margin-bottom:10px}
+.further ul{display:grid;gap:8px}
+.further li{font-size:15px;line-height:1.6}
+.further li::before{content:"→";color:var(--gold);margin-right:8px}
+
 /* ---------- pages & article ---------- */
 .page{padding:28px 0 80px}
 .crumb{display:flex;gap:10px;font:400 10.5px/1 var(--lat);letter-spacing:.24em;text-transform:uppercase;color:var(--taupe);margin-bottom:34px}
