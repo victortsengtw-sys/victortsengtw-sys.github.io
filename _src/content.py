@@ -25,7 +25,7 @@ C["zh"] = dict(
     one="在亞洲、歐洲與西非工作過，現在住在阿比讓。幫亞洲的人與企業，看懂一個陌生市場。",
     cta1="預約諮詢", cta2="看作品",
     photo_alt="曾浩瑜在阿比讓街頭，穿著西非窄幅手織布上衣",
-    stats=[("€960K", "整合行銷專案預算，由我統籌執行"), ("17場", "展覽與大型活動，一年內完成"), ("11國", "國際市場標竿研究，一次完成"), ("36張", "附出處的象牙海岸文化解讀卡")],
+    stats=[("€960K", "整合行銷專案預算，由我統籌執行"), ("17場", "展覽與大型活動，一年內完成"), ("11國", "國際市場標竿研究，一次完成"), ("7+年", "國際行銷與市場開發經驗，橫跨歐、亞、非")],
     sec_expertise="專長", sec_expertise_t="四個領域，一個目標：讀懂一個地方。",
     pillars=[
         ("非洲藝術與品味", "看懂作品、工藝與禮儀背後的故事。", ["品味導覽", "文化行程", "送禮建議"]),
@@ -79,7 +79,7 @@ C["en"] = dict(
     one="I've worked in Asia, Europe and West Africa, and now live in Abidjan. I help Asian companies and people read an unfamiliar market.",
     cta1="Book a consultation", cta2="See my work",
     photo_alt="Victor Tseng on a street in Abidjan, wearing a West African strip-woven shirt",
-    stats=[("€960K", "in integrated marketing budgets managed"), ("17", "exhibitions and public events delivered in one year"), ("11", "countries benchmarked in one international study"), ("36", "sourced cards on Ivorian culture")],
+    stats=[("€960K", "in integrated marketing budgets managed"), ("17", "exhibitions and public events delivered in one year"), ("11", "countries benchmarked in one international study"), ("7+", "years in international marketing and market development, across Europe, Asia and Africa")],
     sec_expertise="Expertise", sec_expertise_t="Four fields, one goal: understanding a place.",
     pillars=[
         ("African Art & Taste", "The stories behind artworks, crafts and etiquette.", ["Art & taste tours", "Cultural itineraries", "Gifting advice"]),
@@ -133,7 +133,7 @@ C["fr"] = dict(
     one="J'ai travaillé en Asie, en Europe et en Afrique de l'Ouest ; je vis aujourd'hui à Abidjan. J'aide les entreprises et les professionnels asiatiques à décrypter un marché inconnu.",
     cta1="Prendre rendez-vous", cta2="Voir mes projets",
     photo_alt="Victor Tseng dans une rue d'Abidjan, vêtu d'une chemise en bandes tissées d'Afrique de l'Ouest",
-    stats=[("960K€", "de budgets marketing intégré pilotés"), ("17", "salons et événements publics en un an"), ("11", "pays étudiés dans un benchmark international"), ("36", "fiches sourcées sur la culture ivoirienne")],
+    stats=[("960K€", "de budgets marketing intégré pilotés"), ("17", "salons et événements publics en un an"), ("11", "pays étudiés dans un benchmark international"), ("7+", "ans de marketing international et de développement de marchés, entre Europe, Asie et Afrique")],
     sec_expertise="Expertise", sec_expertise_t="Quatre domaines, un but : comprendre un lieu.",
     pillars=[
         ("Art africain et goût", "Les histoires derrière les œuvres, l'artisanat et les codes.", ["Visites art et goût", "Itinéraires culturels", "Conseils cadeaux"]),
