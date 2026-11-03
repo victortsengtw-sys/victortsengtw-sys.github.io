@@ -370,11 +370,7 @@ def newsletter(lang, c):
     return f"""<section class="nl" id="newsletter" aria-label="{e(c['nl_k'])}">
     <div class="wrap nl-g rv">
       <div><p class="cap">{e(c['nl_k'])}</p><h2 class="nl-h">{e(c['nl_t'])}</h2><p class="nl-d">{e(c['nl_d'])}</p><p class="nl-d">{e(c['nl_why'])}</p></div>
-      <form class="nl-f" action="https://formsubmit.co/{EMAIL}" method="POST" data-ajax="https://formsubmit.co/ajax/{EMAIL}" data-ok="{e(c['nl_ok'])}" data-err="{e(c['nl_err'])}" data-sending="{e(c['nl_sending'])}">
-        <input type="hidden" name="_subject" value="{e(c['nl_t'])} · victseng.com">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="{DOMAIN}{PATHS[lang]}#newsletter">
+      <form class="nl-f" action="{e(CFG.get('newsletterEndpoint', ''))}" method="POST" data-ep="{e(CFG.get('newsletterEndpoint', ''))}" data-ok="{e(c['nl_ok'])}" data-err="{e(c['nl_err'])}" data-sending="{e(c['nl_sending'])}">
         <input type="hidden" name="language" value="{lang}">
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="fr2">

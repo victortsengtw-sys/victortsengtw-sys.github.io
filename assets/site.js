@@ -39,23 +39,21 @@
     v0.textContent = '0'; requestAnimationFrame(step);
   }
 
-  /* newsletter (FormSubmit) */
+  /* newsletter → Google Sheet (Apps Script web app) */
   [].forEach.call(d.querySelectorAll('.nl-f'), function (f) {
-    f.addEventListener('submit', function (ev) {
-      if (!w.fetch) return;
-      ev.preventDefault();
-      var msg = f.querySelector('.nl-msg'), btn = f.querySelector('button[type=submit]');
-      if (f._honey && f._honey.value) return;
-      var data = {}; [].forEach.call(f.elements, function (x) { if (!x.name) return; if (x.type === 'checkbox') { if (x.checked) data[x.name] = data[x.name] ? data[x.name] + ', ' + x.value : x.value; } else data[x.name] = x.value; });
+    f.addEventListener('submit', function (ev0) {
+      ev0.preventDefault();
+      var msg = f.querySelector('.nl-msg'), btn = f.querySelector('button[type=submit]'), ep = f.getAttribute('data-ep');
+      if (f.elements._honey && f.elements._honey.value) return;
+      if (!ep) { msg.textContent = f.getAttribute('data-err'); return; }
+      var body = new URLSearchParams();
+      [].forEach.call(f.elements, function (x) { if (!x.name || (x.type === 'checkbox' && !x.checked)) return; body.append(x.name, x.value); });
+      body.append('page', location.href);
       btn.disabled = true; msg.textContent = f.getAttribute('data-sending') || '…';
-      fetch(f.getAttribute('data-ajax'), { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) })
-        .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); })
-        .then(function (j) {
-          var ok = j && String(j.success) === 'true';
-          if (ok) { msg.textContent = f.getAttribute('data-ok'); f.reset(); ev('newsletter_signup'); }
-          else { msg.textContent = (j && j.message) ? j.message : f.getAttribute('data-err'); }
-        })
-        .catch(function () { HTMLFormElement.prototype.submit.call(f); })
+      var done = false, timer = setTimeout(function () { if (!done) { done = true; btn.disabled = false; msg.textContent = f.getAttribute('data-err'); } }, 20000);
+      fetch(ep, { method: 'POST', mode: 'no-cors', body: body })
+        .then(function () { if (done) return; done = true; clearTimeout(timer); msg.textContent = f.getAttribute('data-ok'); f.reset(); ev('newsletter_signup'); })
+        .catch(function () { if (done) return; done = true; clearTimeout(timer); msg.textContent = f.getAttribute('data-err'); })
         .then(function () { btn.disabled = false; });
     });
   });
