@@ -10,7 +10,7 @@ sys.path.insert(0, HERE)
 from content import C, LANGS, PATHS, HREFLANG, LANG_LABEL, DOMAIN, EMAIL, LINKEDIN, CAT_KEYS, CAT_PAT, CAT_MOTIF, ORGS
 
 OUT = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, ".."))
-VER = "20261103c"
+VER = "20261103d"
 PAT = json.load(open(os.path.join(HERE, "patterns.json")))
 LINKS = json.load(open(os.path.join(HERE, "data", "links.json"), encoding="utf-8"))
 IMAGES = {}
