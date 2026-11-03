@@ -72,11 +72,11 @@ C["en"] = dict(
     description="Victor Tseng (曾浩瑜), a cross-cultural market development consultant based in Abidjan, Côte d'Ivoire. African art & taste, lifestyle, cross-cultural communication, African business & markets.",
     job_title="Cross-cultural Market Development Consultant",
     nav=[("expertise", "Expertise"), ("work", "Work"), ("notes", "Column"), ("press", "Press"), ("experience", "Experience"), ("contact", "Contact")],
-    h1="Reading Africa:<br>art, lifestyle and business",
+    h1="Reading Africa:<br>art, life, business",
     domains=["African art", "Lifestyle", "Cross-cultural", "African business"],
     who="Victor Tseng 曾浩瑜",
     role="Cross-cultural market development",
-    one="I've worked in Asia, Europe and West Africa, and now live in Abidjan. I help Asian companies and people read an unfamiliar market.",
+    one="Asia, Europe, West Africa, now Abidjan. I help Asian companies read unfamiliar markets.",
     cta1="Book a consultation", cta2="See my work",
     photo_alt="Victor Tseng on a street in Abidjan, wearing a West African strip-woven shirt",
     stats=[("€960K", "in integrated marketing budgets managed"), ("17", "exhibitions and public events delivered in one year"), ("11", "countries benchmarked in one international study"), ("7+", "years in international marketing and market development, across Europe, Asia and Africa")],
@@ -126,11 +126,11 @@ C["fr"] = dict(
     description="Victor Tseng (曾浩瑜), consultant en développement de marchés et interculturel basé à Abidjan, Côte d'Ivoire. Art africain, art de vivre, communication interculturelle, business et marchés africains.",
     job_title="Consultant en développement de marchés et interculturel",
     nav=[("expertise", "Expertise"), ("work", "Projets"), ("notes", "Chroniques"), ("press", "Presse"), ("experience", "Parcours"), ("contact", "Contact")],
-    h1="Lire l'Afrique :<br>son art, sa vie, ses affaires",
+    h1="Lire l'Afrique :<br>art, vie, affaires",
     domains=["Art africain", "Art de vivre", "Interculturel", "Business africain"],
     who="Victor Tseng 曾浩瑜",
     role="Développement de marchés · Interculturel",
-    one="J'ai travaillé en Asie, en Europe et en Afrique de l'Ouest ; je vis aujourd'hui à Abidjan. J'aide les entreprises et les professionnels asiatiques à décrypter un marché inconnu.",
+    one="Asie, Europe, Afrique de l'Ouest, aujourd'hui Abidjan. J'aide les entreprises asiatiques à décrypter un marché inconnu.",
     cta1="Prendre rendez-vous", cta2="Voir mes projets",
     photo_alt="Victor Tseng dans une rue d'Abidjan, vêtu d'une chemise en bandes tissées d'Afrique de l'Ouest",
     stats=[("960K€", "de budgets marketing intégré pilotés"), ("17", "salons et événements publics en un an"), ("11", "pays étudiés dans un benchmark international"), ("7+", "ans de marketing international et de développement de marchés, entre Europe, Asie et Afrique")],
@@ -295,3 +295,29 @@ UX = {
 }
 for _l in LANGS:
     C[_l].update(UX[_l])
+
+COPY = {
+    "zh": dict(rights="版權所有", copy_t="版權聲明", copy_body=[
+        ("網站內容", ["本網站的文字、版面設計、照片與「讀懂非洲」專欄文章，著作權屬於 Victor Tseng 曾浩瑜（維策顧問 VicTseng Consult），另有標示者除外。"]),
+        ("引用與轉載", ["歡迎引用不超過 150 字的段落，請註明「Victor Tseng 曾浩瑜／victseng.com」並附上原文連結。", "全文轉載、改寫、翻譯或商業使用，請先來信取得書面同意：<a href=\"mailto:victseng.consult@gmail.com\">victseng.consult@gmail.com</a>。"]),
+        ("圖片", ["文章中的圖片只使用公有領域（Public Domain、CC0）或 Creative Commons 姓名標示（CC BY、CC BY-SA）授權的作品，來源、作者與授權條款標示在每張圖下方。使用這些圖片時，請依原授權條款辦理，不受本站版權聲明限制。", "本站人像照片為 Victor Tseng 本人所有，未經同意請勿使用。"]),
+        ("作品與商標", ["「AKWABA・非洲品味之家／Maison de Goût Africain」與《Akwaba！非洲大冒險》為 Victor Tseng 的原創作品。其中使用的象牙海岸紋樣均經查證來源，詳見各作品說明。"]),
+        ("資料正確性", ["專欄文章為公開資料的整理，每篇附上出處，力求正確，但法規、數據與日期可能變動。涉及法律、稅務或投資決策時，請以主管機關公告或專業意見為準。若發現錯誤，歡迎來信指正。"]),
+    ]),
+    "en": dict(rights="All rights reserved", copy_t="Copyright", copy_body=[
+        ("Site content", ["Unless otherwise stated, the text, design, photographs and Reading Africa articles on this site are © Victor Tseng (VicTseng Consult)."]),
+        ("Quoting and republishing", ["You are welcome to quote up to 100 words with credit to “Victor Tseng / victseng.com” and a link to the original page.", "For full republication, adaptation, translation or commercial use, please ask for written permission first: <a href=\"mailto:victseng.consult@gmail.com\">victseng.consult@gmail.com</a>."]),
+        ("Images", ["Article images are public domain (incl. CC0) or licensed under Creative Commons Attribution (CC BY, CC BY-SA); source, author and licence are credited under each image. Reuse of those images follows their original licence, not this notice.", "The portrait photographs of Victor Tseng belong to him and may not be used without permission."]),
+        ("Projects and names", ["“AKWABA · Maison de Goût Africain” and “Akwaba! An African Adventure” are original works by Victor Tseng. The Ivorian motifs they use were researched for their origins; see each project for details."]),
+        ("Accuracy", ["Articles compile public sources and cite them, but laws, figures and dates change. For legal, tax or investment decisions, rely on official notices or professional advice. Corrections are welcome by email."]),
+    ]),
+    "fr": dict(rights="Tous droits réservés", copy_t="Droits d'auteur", copy_body=[
+        ("Contenus du site", ["Sauf mention contraire, les textes, la mise en page, les photographies et les chroniques « Lire l'Afrique » sont © Victor Tseng (VicTseng Consult)."]),
+        ("Citation et reprise", ["Vous pouvez citer jusqu'à 100 mots en mentionnant « Victor Tseng / victseng.com » avec un lien vers la page d'origine.", "Pour toute reprise intégrale, adaptation, traduction ou utilisation commerciale, merci de demander une autorisation écrite : <a href=\"mailto:victseng.consult@gmail.com\">victseng.consult@gmail.com</a>."]),
+        ("Images", ["Les images des articles sont dans le domaine public (dont CC0) ou sous licence Creative Commons Attribution (CC BY, CC BY-SA) ; la source, l'auteur et la licence figurent sous chaque image. Leur réutilisation suit leur licence d'origine, et non la présente mention.", "Les portraits de Victor Tseng lui appartiennent et ne peuvent être utilisés sans autorisation."]),
+        ("Projets et noms", ["« AKWABA · Maison de Goût Africain » et « Akwaba ! Une aventure africaine » sont des œuvres originales de Victor Tseng. Les motifs ivoiriens utilisés ont été documentés quant à leur origine ; voir chaque projet."]),
+        ("Exactitude", ["Les chroniques compilent des sources publiques citées, mais lois, chiffres et dates évoluent. Pour toute décision juridique, fiscale ou d'investissement, référez-vous aux communications officielles ou à un professionnel. Les corrections sont les bienvenues par e-mail."]),
+    ]),
+}
+for _l in LANGS:
+    C[_l].update(COPY[_l])

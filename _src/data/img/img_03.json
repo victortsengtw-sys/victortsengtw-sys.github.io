@@ -1,0 +1,90 @@
+{
+ "labor-law-basics": null,
+ "man-region": null,
+ "masa-festival": null,
+ "meeting-protocol": null,
+ "musee-des-civilisations": null,
+ "national-development-plan": null,
+ "paquinou": null,
+ "photography-etiquette": null,
+ "product-standards-codinorm": null,
+ "public-procurement": null,
+ "religion-and-business-dining": null,
+ "retail-market": {
+  "file": "Adjamemarche1.jpg",
+  "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Adjamemarche1.jpg?width=1200",
+  "page": "https://commons.wikimedia.org/wiki/File:Adjamemarche1.jpg",
+  "author": "Zenman",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "alt": {
+   "zh": "阿比讓 Adjamé 傳統市場延伸到 Nangui Abrogoua 大道上",
+   "en": "Adjamé traditional market in Abidjan spilling onto boulevard Nangui Abrogoua",
+   "fr": "Le marché traditionnel d'Adjamé à Abidjan, débordant sur le boulevard Nangui Abrogoua"
+  },
+  "caption": {
+   "zh": "阿比讓 Adjamé 傳統市場，攤位延伸到 Nangui Abrogoua 大道（2008）",
+   "en": "Adjamé traditional market, Abidjan, overflowing onto boulevard Nangui Abrogoua (2008)",
+   "fr": "Le marché traditionnel d'Adjamé, à Abidjan, débordant sur le boulevard Nangui Abrogoua (2008)"
+  }
+ },
+ "right-hand-etiquette": null,
+ "sassandra": null,
+ "senufo-art": {
+  "file": "Female ancestor figure by Senufo people.jpg",
+  "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Female_ancestor_figure_by_Senufo_people.jpg?width=1200",
+  "page": "https://commons.wikimedia.org/wiki/File:Female_ancestor_figure_by_Senufo_people.jpg",
+  "author": "Zambonia",
+  "license": "Public domain",
+  "license_url": "",
+  "alt": {
+   "zh": "Senufo 無名工匠雕刻的木製女性祖先像",
+   "en": "Carved wooden female ancestor figure by an unknown Senufo artist",
+   "fr": "Figure féminine d'ancêtre en bois sculptée par un artiste senoufo anonyme"
+  },
+  "caption": {
+   "zh": "Senufo 女性祖先像，木雕，約 1915 年，印第安納波利斯美術館 Eiteljorg 非洲與大洋洲藝術展廳藏",
+   "en": "Senufo female ancestor figure, wood, c. 1915, Eiteljorg Suite of African and Oceanic Art, Indianapolis Museum of Art",
+   "fr": "Figure féminine d'ancêtre senoufo, bois, vers 1915, Eiteljorg Suite of African and Oceanic Art, Indianapolis Museum of Art"
+  }
+ },
+ "senufo-balafon": null,
+ "setting-up-in-cote-divoire": {
+  "file": "Abidjanpyramid.JPG",
+  "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Abidjanpyramid.JPG?width=1200",
+  "page": "https://commons.wikimedia.org/wiki/File:Abidjanpyramid.JPG",
+  "author": "Zenman",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "alt": {
+   "zh": "空拍阿比讓 Plateau 商業區",
+   "en": "Aerial view of the Plateau district of Abidjan",
+   "fr": "Vue aérienne du quartier du Plateau à Abidjan"
+  },
+  "caption": {
+   "zh": "空拍阿比讓 Plateau 區（2008）",
+   "en": "Aerial view of Abidjan's Plateau district (2008)",
+   "fr": "Vue aérienne d'Abidjan, quartier du Plateau (2008)"
+  }
+ },
+ "sim-and-mobile-data": null,
+ "special-economic-zones": null,
+ "startup-ecosystem": {
+  "file": "Toursplateau1.jpg",
+  "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Toursplateau1.jpg?width=1200",
+  "page": "https://commons.wikimedia.org/wiki/File:Toursplateau1.jpg",
+  "author": "Ivoire8",
+  "license": "CC BY-SA 3.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "alt": {
+   "zh": "Ébrié 潟湖畔的阿比讓 Plateau 區高樓",
+   "en": "Towers of the Plateau district on the Ébrié Lagoon, Abidjan",
+   "fr": "Les tours du quartier du Plateau au bord de la lagune Ébrié, Abidjan"
+  },
+  "caption": {
+   "zh": "Ébrié 潟湖畔的 Plateau 區高樓，阿比讓（2002）",
+   "en": "Towers on the Ébrié Lagoon, Plateau district, Abidjan (2002)",
+   "fr": "Tours du quartier du Plateau à Abidjan, au bord de la lagune Ébrié (2002)"
+  }
+ }
+}

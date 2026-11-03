@@ -78,7 +78,7 @@ ul,ol{list-style:none;margin:0;padding:0}
 @keyframes pulse{70%{box-shadow:0 0 0 7px rgba(110,156,126,0)}100%{box-shadow:0 0 0 0 rgba(110,156,126,0)}}
 .hero-k{margin:0 0 14px;color:var(--gold)}
 .h1{font:400 clamp(32px,8.8vw,82px)/1.18 var(--serif);letter-spacing:.06em}
-.l-en .h1,.l-fr .h1{font-family:var(--disp);font-weight:400;letter-spacing:0;line-height:1.02;font-size:clamp(42px,10.5vw,84px)}
+.l-en .h1,.l-fr .h1{font-family:var(--disp);font-weight:400;letter-spacing:0;line-height:1.02;font-size:clamp(38px,10vw,84px)}
 .ln{display:block;overflow:hidden;padding:.04em 0}
 .ln>span{display:inline-block}
 .js .ln>span{transform:translateY(105%);transition:transform 1.2s var(--ease)}
@@ -370,6 +370,17 @@ ul,ol{list-style:none;margin:0;padding:0}
 .rel{margin-top:56px}
 .rel .sh-k{margin-bottom:18px}
 
+/* ---------- inline links & figures ---------- */
+.prose a.il{border-bottom:1px solid var(--gold);transition:background .25s}
+.prose a.il:hover{background:rgba(168,135,74,.14)}
+.fig{margin:1.6em 0 2em}
+.fig img{display:block;width:100%;height:auto;max-height:520px;object-fit:cover;background:var(--iv2);border:1px solid var(--line)}
+.fig figcaption{display:grid;gap:4px;margin-top:10px;font-size:12.5px;line-height:1.6;color:var(--taupe)}
+.fig .cr{font:400 10.5px/1.5 var(--mono);letter-spacing:.02em}
+.fig .cr a{border-bottom:1px solid var(--line2)}
+.ft-c a{border-bottom:1px solid var(--line2)}
+.ft-c a:hover{color:var(--ink)}
+
 /* ---------- pages & article ---------- */
 .page{padding:28px 0 80px}
 .crumb{display:flex;gap:10px;font:400 10.5px/1 var(--lat);letter-spacing:.24em;text-transform:uppercase;color:var(--taupe);margin-bottom:34px}
@@ -517,4 +528,12 @@ ul,ol{list-style:none;margin:0;padding:0}
   html{scroll-behavior:auto}
   .js .rv,.js .ln>span,.js .arch{opacity:1;transform:none;transition:none}
   .mq-in,.dot{animation:none}
+}
+
+@media (max-width:719px){
+  .l-en .one,.l-fr .one{font-size:14px;margin:10px auto 18px}
+  .l-en .hero .ctas,.l-fr .hero .ctas{gap:12px 18px}
+  .l-en .hero .btn,.l-fr .hero .btn{padding:0 18px;letter-spacing:.18em;font-size:11px;min-height:46px}
+  .l-en .who,.l-fr .who{gap:6px}
+  .l-en .arch,.l-fr .arch{margin-top:30px;width:min(48vw,200px)}
 }

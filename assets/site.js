@@ -17,7 +17,7 @@
     var h = d.documentElement, max = h.scrollHeight - h.clientHeight;
     if (tt) {
       var nearEnd = h.scrollTop + h.clientHeight > h.scrollHeight - 320;
-      tt.classList.toggle('on', h.scrollTop > 160);
+      tt.classList.add('on');
       if (tt._up !== nearEnd) { tt._up = nearEnd; tt.classList.toggle('up', nearEnd); var lab = tt.getAttribute(nearEnd ? 'data-up' : 'data-down'); tt.setAttribute('aria-label', lab); tt.querySelector('.fab-t').textContent = lab; }
     }
     if (cue) cue.classList.toggle('off', h.scrollTop > 160);

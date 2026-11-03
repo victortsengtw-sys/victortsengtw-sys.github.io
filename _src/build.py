@@ -12,6 +12,13 @@ from content import C, LANGS, PATHS, HREFLANG, LANG_LABEL, DOMAIN, EMAIL, LINKED
 OUT = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, ".."))
 VER = "20261103c"
 PAT = json.load(open(os.path.join(HERE, "patterns.json")))
+LINKS = json.load(open(os.path.join(HERE, "data", "links.json"), encoding="utf-8"))
+IMAGES = {}
+for _f in sorted(glob.glob(os.path.join(HERE, "data", "img", "*.json"))):
+    try:
+        IMAGES.update({k: v for k, v in json.load(open(_f, encoding="utf-8")).items() if v})
+    except Exception as _ex:
+        print("skip images file", _f, _ex)
 CFG = json.load(open(os.path.join(HERE, "data", "config.json"), encoding="utf-8"))
 MAP = json.load(open(os.path.join(HERE, "data", "map.json")))
 PRESS = json.load(open(os.path.join(HERE, "data", "press.json"), encoding="utf-8"))
@@ -120,6 +127,69 @@ def load_notes():
 
 
 NOTES = load_notes()
+
+SKIP_TAGS = ("a", "h1", "h2", "h3", "h4", "th", "code", "figcaption")
+
+
+def autolink(html, slug, lang):
+    """Link the first mention of other articles' keywords (max 6 per article), never inside headings or links."""
+    cut = html.find("<hr")
+    head, tail = (html[:cut], html[cut:]) if cut >= 0 else (html, "")
+    pairs = sorted(((kw, t) for t, kws in LINKS.items() if t != slug and t in NOTES for kw in kws), key=lambda x: -len(x[0]))
+    used_t, made, ph = set(), [], []
+    parts = re.split(r"(<[^>]+>)", head)
+    depth = 0
+    for i, part in enumerate(parts):
+        if part.startswith("<"):
+            m = re.match(r"<(/?)([a-zA-Z0-9]+)", part)
+            if m and m.group(2).lower() in SKIP_TAGS:
+                depth += -1 if m.group(1) else 1
+            continue
+        if depth > 0 or not part.strip():
+            continue
+        text = part
+        for kw, t in pairs:
+            if len(made) >= 6:
+                break
+            if t in used_t:
+                continue
+            if re.match(r"^[\x00-\u024F' .-]+$", kw):
+                rx = re.compile(r"(?<![\w\-’'])" + re.escape(kw) + r"(?![\w\-])")
+            else:
+                rx = re.compile(re.escape(kw))
+            mm = rx.search(text)
+            if not mm:
+                continue
+            tl = t_lang = lang if lang in NOTES[t] else next(iter(NOTES[t]))
+            ph.append(f'<a class="il" href="{note_path(tl, t)}">{mm.group(0)}</a>')
+            text = text[:mm.start()] + f"\x00{len(ph)-1}\x00" + text[mm.end():]
+            used_t.add(t); made.append(t)
+        parts[i] = text
+    out = "".join(parts)
+    out = re.sub(r"\x00(\d+)\x00", lambda m: ph[int(m.group(1))], out)
+    return out + tail
+
+
+def figure(slug, lang):
+    im = IMAGES.get(slug)
+    if not im:
+        return ""
+    lic = e(im.get("license", ""))
+    lic_html = f'<a href="{e(im["license_url"])}" rel="license noopener" target="_blank">{lic}</a>' if im.get("license_url") else lic
+    cap = e((im.get("caption") or {}).get(lang, ""))
+    alt = e((im.get("alt") or {}).get(lang, ""))
+    credit = f'<a href="{e(im.get("page", ""))}" target="_blank" rel="noopener">{e(im.get("author", ""))}</a> · {lic_html}'
+    return (f'<figure class="fig"><img src="{e(im["src"])}" alt="{alt}" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.remove()">'
+            f'<figcaption><span>{cap}</span><span class="cr">{credit}</span></figcaption></figure>')
+
+
+def enrich(slug, lang, html):
+    html = autolink(html, slug, lang)
+    fig = figure(slug, lang)
+    if fig:
+        k = html.find("<h2")
+        html = html[:k] + fig + html[k:] if k > 0 else fig + html
+    return html
 
 
 def pillar_name(n, lang):
@@ -255,7 +325,7 @@ def footer(lang, c, alts, idx):
     <a class="ft-logo" href="{home(lang)}">VICTOR TSENG</a>
     <p class="ft-s">{e(c['based'])} · <time data-clock>--:--</time></p>
     <nav class="ft-l" aria-label="{e(c['lang_label'])}">{langsw}</nav>
-    <p class="ft-c">© 2026 Victor Tseng 曾浩瑜 · VicTseng Consult</p>
+    <p class="ft-c">© 2026 Victor Tseng 曾浩瑜 · VicTseng Consult · {e(c['rights'])} · <a href="{PATHS[lang]}copyright/">{e(c['copy_t'])}</a></p>
   </div>
 </footer>
 <button type="button" class="totop" data-down="{e(c['more'])}" data-up="{e(c['top'])}" aria-label="{e(c['more'])}"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span class="fab-t">{e(c['more'])}</span></button>
@@ -407,7 +477,6 @@ def home_page(lang):
     pillars = "".join(f"""
       <li class="pl rv" id="x-{i+1}">
         <span class="pl-n">{i+1:02d}</span>
-        <span class="pl-m" style="{pat(CAT_PAT[CAT_KEYS[i]])}" aria-hidden="true"></span>
         <h3>{e(t)}</h3>
         <p>{e(l)}</p>
         <p class="pl-s">{' <i>·</i> '.join(e(s) for s in tags)}</p>
@@ -461,7 +530,6 @@ def home_page(lang):
         <picture><source srcset="/assets/img/victor-tseng.webp" type="image/webp"><img src="/assets/img/victor-tseng.jpg" width="800" height="1000" alt="{e(c['photo_alt'])}" fetchpriority="high"></picture>
       </figure>
       <ul class="doms">{doms}</ul>
-      <a class="cue" href="#expertise"><span>{e(c['scroll'])}</span><i aria-hidden="true"></i></a>
     </div>
   </section>
 
@@ -479,7 +547,7 @@ def home_page(lang):
   {banner(lang, c)}
 
   <section id="work" class="sec dark">
-    <div class="wrap">{sh(2, c['sec_work'], c['sec_work_t'], c['work_note'])}
+    <div class="wrap">{sh(2, c['sec_work'], c['sec_work_t'])}
       <div class="wks">{works}
       </div>
     </div>
@@ -602,7 +670,7 @@ def note_page(slug, lang):
     avail = (f'<p class="avail">{e(c["avail"])} ' + " · ".join(f'<a href="{note_path(l, slug)}" hreflang="{HREFLANG[l]}">{LANG_NAME[l]}</a>' for l in others) + "</p>") if others else ""
     ld = {"@context": "https://schema.org", "@type": "Article", "headline": n["title"], "description": n["description"],
           "datePublished": n["date"], "dateModified": n.get("updated", n["date"]), "inLanguage": c["html_lang"],
-          "mainEntityOfPage": DOMAIN + note_path(lang, slug), "image": DOMAIN + f"/assets/img/og-{lang if lang in C else 'zh'}.jpg",
+          "mainEntityOfPage": DOMAIN + note_path(lang, slug), "image": (IMAGES.get(slug) or {}).get("src") or DOMAIN + f"/assets/img/og-{lang if lang in C else 'zh'}.jpg",
           "keywords": ", ".join(n["tags"]),
           "author": person_ld(lang, c), "publisher": {"@type": "Person", "name": "Victor Tseng"}}
     tags = "".join(f"<li>{e(t)}</li>" for t in n["tags"])
@@ -617,7 +685,7 @@ def note_page(slug, lang):
       <p class="art-m"><span>{e(c['by'])} Victor Tseng 曾浩瑜</span><time datetime="{n['date']}">{fmt_date(n['date'], lang)}</time><span>{n['mins']} {e(c['min_read'])}</span></p>
       {avail}
     </header>
-    <div class="prose">{n['html']}</div>
+    <div class="prose">{enrich(slug, lang, n['html'])}</div>
     <ul class="art-tags">{tags}</ul>
     <p class="motif-n">{e(c['motif_note'].format(m=CAT_MOTIF[lang][cat_key(n)]))}</p>
     {related(slug, lang, c)}
@@ -629,6 +697,22 @@ def note_page(slug, lang):
 </main>
 {newsletter(lang, c)}"""
     return (head(lang, c, f"{n['title']}｜Victor Tseng", n["description"], note_path(lang, slug), alts, f"/assets/img/og-{lang}.jpg", "article", ld)
+            + header(lang, c, alts, False) + body + footer(lang, c, alts, search_index(lang, c)))
+
+
+def copyright_page(lang):
+    c = L(lang)
+    alts = {l: PATHS[l] + "copyright/" for l in LANGS}
+    secs = "".join(f"<h2>{e(h)}</h2>" + "".join(f"<p>{x}</p>" for x in ps) for h, ps in c["copy_body"])
+    body = f"""
+<main id="main" class="page">
+  <article class="wrap art">
+    <nav class="crumb"><a href="{home(lang)}">{e(c['back'])}</a></nav>
+    <header class="art-h"><p class="sh-k">© 2026</p><h1>{e(c['copy_t'])}</h1></header>
+    <div class="prose">{secs}</div>
+  </article>
+</main>"""
+    return (head(lang, c, f"{c['copy_t']}｜Victor Tseng", c["copy_t"], PATHS[lang] + "copyright/", alts, f"/assets/img/og-{lang}.jpg", "website", None)
             + header(lang, c, alts, False) + body + footer(lang, c, alts, search_index(lang, c)))
 
 
@@ -645,6 +729,8 @@ for l in LANGS:
     write(notes_path(l) + "index.html", notes_index(l)); urls.append(({x: notes_path(x) for x in LANGS}, notes_path(l), None))
     for key in CAT_KEYS:
         write(cat_path(l, key) + "index.html", cat_page(l, key)); urls.append(({x: cat_path(x, key) for x in LANGS}, cat_path(l, key), None))
+for l in LANGS:
+    write(PATHS[l] + "copyright/index.html", copyright_page(l)); urls.append(({x: PATHS[x] + "copyright/" for x in LANGS}, PATHS[l] + "copyright/", None))
 for slug, vs in NOTES.items():
     for l in vs:
         write(note_path(l, slug) + "index.html", note_page(slug, l))
