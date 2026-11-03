@@ -15,7 +15,11 @@
   var cue = d.querySelector('.cue'), tt = d.querySelector('.totop'), bar = d.querySelector('.prog i'), arch = d.querySelector('.arch img'), ticking = false;
   function onScroll() {
     var h = d.documentElement, max = h.scrollHeight - h.clientHeight;
-    if (tt) tt.classList.toggle('on', h.scrollTop > 700);
+    if (tt) {
+      var nearEnd = h.scrollTop + h.clientHeight > h.scrollHeight - 320;
+      tt.classList.toggle('on', h.scrollTop > 160);
+      if (tt._up !== nearEnd) { tt._up = nearEnd; tt.classList.toggle('up', nearEnd); var lab = tt.getAttribute(nearEnd ? 'data-up' : 'data-down'); tt.setAttribute('aria-label', lab); tt.querySelector('.fab-t').textContent = lab; }
+    }
     if (cue) cue.classList.toggle('off', h.scrollTop > 160);
     if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? h.scrollTop / max : 0) + ')';
     if (arch && !reduce) { var y = Math.min(h.scrollTop, 700); arch.style.transform = 'translateY(' + (y * 0.06) + 'px) scale(' + (1 + y * 0.00012) + ')'; }
@@ -23,6 +27,17 @@
   }
   w.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   onScroll();
+
+  /* floating button: keep reading (down) / back to top (up) */
+  if (tt) tt.addEventListener('click', function () {
+    var h = d.documentElement;
+    if (tt.classList.contains('up')) { w.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); return; }
+    var offs = (d.querySelector('.hd') || {}).offsetHeight || 0, y = h.scrollTop + offs + 24, target = null;
+    var marks = d.querySelectorAll('main section, .prose h2, .art-cta, .rel, footer');
+    for (var i = 0; i < marks.length; i++) { var t = marks[i].getBoundingClientRect().top + h.scrollTop; if (t > y + 40) { target = t - offs - 12; break; } }
+    if (target === null || target - h.scrollTop > h.clientHeight * 1.6) target = h.scrollTop + h.clientHeight * 0.8;
+    w.scrollTo({ top: target, behavior: reduce ? 'auto' : 'smooth' });
+  });
 
   /* count-up numbers */
   function countUp(el) {

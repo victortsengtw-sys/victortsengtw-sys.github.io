@@ -339,7 +339,11 @@ ul,ol{list-style:none;margin:0;padding:0}
 .cue i::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--ink);animation:cue 1.8s var(--ease) infinite}
 @keyframes cue{to{top:100%}}
 .cue:hover{color:var(--ink)}
-.totop{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:70;width:46px;height:46px;display:grid;place-items:center;background:var(--ink);color:var(--iv);border-radius:50%;box-shadow:0 8px 24px rgba(0,0,0,.18);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .4s,transform .4s var(--ease),background .3s}
+.totop{position:fixed;right:14px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:70;height:46px;display:inline-flex;align-items:center;gap:8px;padding:0 16px 0 14px;border:0;background:var(--ink);color:var(--iv);border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.18);font:400 12px/1 var(--sans);letter-spacing:.14em;cursor:pointer;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .4s,transform .4s var(--ease),background .3s}
+.l-en .totop,.l-fr .totop{font-family:var(--lat);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase}
+.totop svg{transition:transform .4s var(--ease);animation:nudge 1.8s var(--ease) infinite}
+.totop.up svg{transform:rotate(180deg);animation:none}
+@keyframes nudge{50%{transform:translateY(3px)}}
 .totop.on{opacity:1;transform:none;pointer-events:auto}
 .totop:hover{background:var(--gold)}
 
@@ -510,7 +514,7 @@ ul,ol{list-style:none;margin:0;padding:0}
 }
 @media (prefers-reduced-motion:reduce){
   .map .arc{stroke-dashoffset:0;transition:none}
-  .map .pulse,.map .halo,.cue i::after{animation:none}
+  .map .pulse,.map .halo,.cue i::after,.totop svg{animation:none}
   html{scroll-behavior:auto}
   .js .rv,.js .ln>span,.js .arch{opacity:1;transform:none;transition:none}
   .mq-in,.dot{animation:none}

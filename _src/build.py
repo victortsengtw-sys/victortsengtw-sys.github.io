@@ -258,7 +258,7 @@ def footer(lang, c, alts, idx):
     <p class="ft-c">© 2026 Victor Tseng 曾浩瑜 · VicTseng Consult</p>
   </div>
 </footer>
-<a class="totop" href="#main" aria-label="{e(c['top'])}" title="{e(c['top'])}"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+<button type="button" class="totop" data-down="{e(c['more'])}" data-up="{e(c['top'])}" aria-label="{e(c['more'])}"><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span class="fab-t">{e(c['more'])}</span></button>
 <div class="sr" role="dialog" aria-modal="true" aria-label="{e(c['search'])}" hidden>
   <div class="sr-box">
     <div class="sr-in">{I_SEARCH}<input type="search" placeholder="{e(c['search_ph'])}" autocomplete="off" aria-label="{e(c['search'])}"><button type="button" data-close-search>{e(c['search_close'])}</button></div>
