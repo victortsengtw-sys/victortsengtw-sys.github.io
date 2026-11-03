@@ -16,19 +16,19 @@ D'après les informations rassemblées par Wikipédia, la tradition akan donne �
 
 ## Les prénoms baoulé selon le jour de naissance
 
-Le tableau ci-dessous s'appuie sur l'article de Wikipédia consacré aux Baoulé :
+Voici la correspondance couramment utilisée chez les Baoulé de Côte d'Ivoire, en commençant par Kouassi le lundi :
 
 | Jour de naissance | Prénom masculin | Prénom féminin |
 |---|---|---|
-| Dimanche | Kouassi | Akissi |
-| Lundi | Kouadio (Kouadjo) | Adjoua |
-| Mardi | Konan | Amenan (Amlan) |
-| Mercredi | Kouakou | Ahou |
-| Jeudi | Yao | Aya |
-| Vendredi | Koffi | Affoué |
-| Samedi | Kouamé | Amoin |
+| Lundi | Kouassi | Akissi |
+| Mardi | Kouadio (Kouadjo) | Adjoua |
+| Mercredi | Konan | Amlan (Amenan) |
+| Jeudi | Kouakou | Ahou |
+| Vendredi | Yao | Aya |
+| Samedi | Koffi | Affoué |
+| Dimanche | Kouamé | Amoin |
 
-Attention : l'orthographe varie selon les familles et les régions ; certaines sources associent aussi ces prénoms à d'autres jours que ceux du tableau, et Wikipédia signale que le calendrier baoulé diffère légèrement de celui des autres groupes akan. **Ne déduisez donc pas la date de naissance de quelqu'un à partir de son seul prénom** : si vous voulez la connaître, mieux vaut demander.
+Attention : l'orthographe varie selon les familles et les régions ; la correspondance akan courante au Ghana (où Kwasi correspond au dimanche) est décalée d'un jour par rapport au tableau, et Wikipédia signale que le calendrier baoulé diffère légèrement de celui des autres groupes akan. **Ne déduisez donc pas la date de naissance de quelqu'un à partir de son seul prénom** : si vous voulez la connaître, mieux vaut demander.
 
 ## Au-delà du jour : les prénoms de rang de naissance
 
@@ -43,7 +43,7 @@ Outre les prénoms du jour, les Baoulé nomment aussi les enfants selon leur ran
 
 ## En un mot, pour les lecteurs asiatiques
 
-La prochaine fois que vous rencontrerez un Koffi, vous saurez que son prénom est probablement lié au vendredi ; mais le mieux reste d'en faire le point de départ d'une question, et non une réponse.
+La prochaine fois que vous rencontrerez un Koffi, vous saurez que son prénom est probablement lié au samedi ; mais le mieux reste d'en faire le point de départ d'une question, et non une réponse.
 
 ---
 

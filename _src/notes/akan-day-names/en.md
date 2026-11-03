@@ -16,19 +16,19 @@ According to information compiled on Wikipedia, Akan tradition gives children a 
 
 ## Baoulé day names at a glance
 
-The table below is based on the Wikipedia entry on the Baoulé:
+Below is the correspondence commonly used by the Baoulé in Côte d'Ivoire, starting with Kouassi on Monday:
 
 | Day of birth | Male name | Female name |
 |---|---|---|
-| Sunday | Kouassi | Akissi |
-| Monday | Kouadio (Kouadjo) | Adjoua |
-| Tuesday | Konan | Amenan (Amlan) |
-| Wednesday | Kouakou | Ahou |
-| Thursday | Yao | Aya |
-| Friday | Koffi | Affoué |
-| Saturday | Kouamé | Amoin |
+| Monday | Kouassi | Akissi |
+| Tuesday | Kouadio (Kouadjo) | Adjoua |
+| Wednesday | Konan | Amlan (Amenan) |
+| Thursday | Kouakou | Ahou |
+| Friday | Yao | Aya |
+| Saturday | Koffi | Affoué |
+| Sunday | Kouamé | Amoin |
 
-Note that spellings vary between families and regions; some sources also match the names to different days from those above, and Wikipedia mentions that the Baoulé calendar differs slightly from that of other Akan groups. So **do not assume someone's birthday from their name alone** — if you want to know, it is best to ask.
+Note that spellings vary between families and regions; the common Ghanaian Akan correspondence (where Kwasi is Sunday) is shifted by one day from the table above, and Wikipedia mentions that the Baoulé calendar differs slightly from that of other Akan groups. So **do not assume someone's birthday from their name alone** — if you want to know, it is best to ask.
 
 ## Beyond the day of the week: birth-order names
 
@@ -43,7 +43,7 @@ Besides day names, the Baoulé also name children by birth order, sometimes in p
 
 ## One line for Asian readers
 
-Next time you meet a Koffi, you will know his name is probably linked to Friday — but the best approach is to treat it as a starting point for asking, not as the answer.
+Next time you meet a Koffi, you will know his name is probably linked to Saturday — but the best approach is to treat it as a starting point for asking, not as the answer.
 
 ---
 
