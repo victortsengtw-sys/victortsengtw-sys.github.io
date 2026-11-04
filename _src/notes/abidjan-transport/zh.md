@@ -26,7 +26,7 @@ gbaka 是跑區與區之間的私營小巴，和 woro-woro 一樣，是在公營
 
 ## 地鐵：還要再等等
 
-阿比讓地鐵一號線從 2017 年 11 月開工，原先預計 2022 年通車。2025 年 12 月，交通部長表示工程進度符合時程，將於 2028 年底交付，全線設 24 座車站。在那之前，路面與水上交通仍是主角。
+阿比讓地鐵一號線從 2017 年 11 月開工，原先預計 2022 年通車。依承建商 Bouygues 的資料，一號線南北向從 Anyama 到 Port-Bouët，全長約 37 公里、設 18 座車站；官方最新的說法是 2028 至 2029 年通車。在那之前，路面與水上交通仍是主角。
 
 | 交通方式 | 行駛範圍 | 適合情境 |
 |---|---|---|
@@ -42,4 +42,4 @@ gbaka 是跑區與區之間的私營小巴，和 woro-woro 一樣，是在公營
 
 ---
 
-*參考：[Africa Investment Forum – Hotels and getting around (2022)](https://africainvestmentforum.com/fr/information/hotels-and-getting-around)；[Le360 Afrique – Les wôrô-wôrô, ces taxis communaux populaires d'Abidjan (2021)](https://afrique.le360.ma/cote-divoire/economie/2021/12/27/36497-cote-divoire-les-woro-woro-ces-taxis-communaux-populaires-dabidjan-36497/)；[Le360 Afrique – Plus d'arrêts anarchiques pour les wôrô-wôrô, gbaka et taxis (2022)](https://afrique.le360.ma/cote-divoire/societe/2022/09/11/39238-transport-urbain-abidjan-plus-darrets-anarchiques-pour-les-woro-woro-gbaka-et-taxis/)；[Abidjan.net – Transport lagunaire (2017)](https://news.abidjan.net/articles/614124/transport-lagunaire-une-solution-pour-desengorger-les-routes)；[Oxford Business Group – Urban transport plans for Abidjan](https://oxfordbusinessgroup.com/analysis/keeping-pace-urban-transport-plans-abidjan-move-along-financing-and-new-private-players)；[AllAfrica – Ligne 1 du métro livrée fin 2028 (2025)](https://fr.allafrica.com/stories/202512110543.html)；[MHEU – Abidjan gbaka](https://www.mheu.org/en/transportation/abidjan/abidjan-gbaka.htm)*
+*參考：[Africa Investment Forum – Hotels and getting around (2022)](https://africainvestmentforum.com/fr/information/hotels-and-getting-around)；[Le360 Afrique – Les wôrô-wôrô, ces taxis communaux populaires d'Abidjan (2021)](https://afrique.le360.ma/cote-divoire/economie/2021/12/27/36497-cote-divoire-les-woro-woro-ces-taxis-communaux-populaires-dabidjan-36497/)；[Le360 Afrique – Plus d'arrêts anarchiques pour les wôrô-wôrô, gbaka et taxis (2022)](https://afrique.le360.ma/cote-divoire/societe/2022/09/11/39238-transport-urbain-abidjan-plus-darrets-anarchiques-pour-les-woro-woro-gbaka-et-taxis/)；[Abidjan.net – Transport lagunaire (2017)](https://news.abidjan.net/articles/614124/transport-lagunaire-une-solution-pour-desengorger-les-routes)；[Oxford Business Group – Urban transport plans for Abidjan](https://oxfordbusinessgroup.com/analysis/keeping-pace-urban-transport-plans-abidjan-move-along-financing-and-new-private-players)；[AllAfrica – Ligne 1 du métro livrée fin 2028 (2025)](https://fr.allafrica.com/stories/202512110543.html)；[MHEU – Abidjan gbaka](https://www.mheu.org/en/transportation/abidjan/abidjan-gbaka.htm)；[Bouygues Construction – Métro d'Abidjan](https://bouygues-construction.com/en/activities/mobility/metros/metro-abidjan)*

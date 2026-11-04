@@ -36,7 +36,7 @@ La Côte d'Ivoire vend de l'électricité à ses voisins par des lignes de trans
 | 2023 | 1 052 GWh | Ligne CLSG, Burkina Faso, Mali |
 | 2024 | 730 GWh | Ligne CLSG, Burkina Faso, Mali, Ghana, Liberia |
 
-Le CLSG est un projet de réseau régional reliant le Liberia, la Sierra Leone et la Guinée. En 2024, les exportations représentaient environ 5,2 % de la production nationale, une part inférieure à celle des années précédentes.
+Le CLSG est une ligne de transport régionale reliant la Côte d'Ivoire, le Liberia, la Sierra Leone et la Guinée (le sigle reprend les initiales des quatre pays) ; la Côte d'Ivoire exporte par elle de l'électricité vers les trois autres. En 2024, les exportations représentaient environ 5,2 % de la production nationale, une part inférieure à celle des années précédentes.
 
 ## Objectifs 2030
 

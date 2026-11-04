@@ -36,7 +36,7 @@ Côte d'Ivoire sells electricity to its neighbours via cross-border transmission
 | 2023 | 1,052 GWh | CLSG line, Burkina Faso, Mali |
 | 2024 | 730 GWh | CLSG line, Burkina Faso, Mali, Ghana, Liberia |
 
-CLSG is a regional grid project linking Liberia, Sierra Leone and Guinea. In 2024, exports accounted for about 5.2% of national generation, a lower share than in previous years.
+CLSG is a regional transmission line linking Côte d'Ivoire, Liberia, Sierra Leone and Guinea (the name is the four countries' initials); Côte d'Ivoire exports power to the other three through it. In 2024, exports accounted for about 5.2% of national generation, a lower share than in previous years.
 
 ## 2030 targets
 
