@@ -345,6 +345,7 @@ def footer(lang, c, alts, idx):
     <a class="ft-logo" href="{home(lang)}">VICTOR TSENG</a>
     <p class="ft-s">{e(c['based'])} · <time data-clock>--:--</time></p>
     <nav class="ft-l" aria-label="{e(c['lang_label'])}">{langsw}</nav>
+    <p class="ft-c ft-soc"><a href="https://www.linkedin.com/in/victortsengtw/" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://www.instagram.com/victorinafrica/" rel="me noopener" target="_blank">Instagram</a> · <a href="https://www.youtube.com/@victorinafrica" rel="me noopener" target="_blank">YouTube</a> · <a href="https://www.tiktok.com/@victorinafrica" rel="me noopener" target="_blank">TikTok</a> · <a href="https://www.threads.com/@victorinafrica" rel="me noopener" target="_blank">Threads</a> · <a href="https://www.facebook.com/victortsengtw" rel="me noopener" target="_blank">Facebook</a></p>
     <p class="ft-c">© 2026 Victor Tseng 曾浩瑜 · VicTseng Consult · {e(c['rights'])} · <a href="{PATHS[lang]}copyright/">{e(c['copy_t'])}</a></p>
   </div>
 </footer>
@@ -394,7 +395,7 @@ def person_ld(lang, c):
             "alumniOf": [{"@type": "CollegeOrUniversity", "name": n} for n in ("IAE Paris-Est", "HEC Paris", "National Sun Yat-sen University")],
             "knowsLanguage": ["zh", "en", "fr"],
             "knowsAbout": ["African art", "Lifestyle in Abidjan", "Cross-cultural communication", "African business", "Côte d'Ivoire", "International market development"],
-            "sameAs": [LINKEDIN, "https://maison.victseng.com/", "https://play.victseng.com/"]}
+            "sameAs": ["https://www.linkedin.com/in/victortsengtw/", "https://www.instagram.com/victorinafrica/", "https://www.tiktok.com/@victorinafrica", "https://www.youtube.com/@victorinafrica", "https://www.threads.com/@victorinafrica", "https://www.facebook.com/victortsengtw", "https://linktr.ee/victsengconsult"] + ["https://maison.victseng.com/", "https://play.victseng.com/"]}
 
 
 def stat_li(n, t):
