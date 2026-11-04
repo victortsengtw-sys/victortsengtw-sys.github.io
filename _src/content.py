@@ -36,8 +36,8 @@ C["zh"] = dict(
     sec_work="作品", sec_work_t="我做的兩個作品",
     work_note="皆由我企劃，並以 AI 協作開發。",
     works=[
-        dict(name="AKWABA・非洲品味之家", sub="MAISON DE GOÛT AFRICAIN", line="附出處的象牙海岸文化指南。", facts=["12 章", "36 解讀卡", "8 路線", "9 場合"], url="/akwaba-maison/?utm_source=victseng&utm_medium=website&utm_campaign=works", cta="打開指南", pat="akan", tone="ivory"),
-        dict(name="《Akwaba！非洲大冒險》", sub="MOBILE WEB GAME", line="跟著亞洲旅人第一次來到西非。", facts=["15 關", "約 10–15 分鐘", "免費"], url="/akwaba/?c=site&utm_source=victseng&utm_medium=website&utm_campaign=works", cta="開始玩", pat="kita", tone="lagoon"),
+        dict(name="AKWABA・非洲品味之家", sub="MAISON DE GOÛT AFRICAIN", line="附出處的象牙海岸文化指南。", facts=["12 章", "36 解讀卡", "8 路線", "9 場合"], url="https://maison.victseng.com/?utm_source=victseng&utm_medium=website&utm_campaign=works", cta="打開指南", pat="akan", tone="ivory"),
+        dict(name="《Akwaba！非洲大冒險》", sub="MOBILE WEB GAME", line="跟著亞洲旅人第一次來到西非。", facts=["15 關", "約 10–15 分鐘", "免費"], url="https://play.victseng.com/?c=site&utm_source=victseng&utm_medium=website&utm_campaign=works", cta="開始玩", pat="kita", tone="lagoon"),
     ],
     sec_writing="發表", sec_writing_t="媒體發表",
     writing_note="只列標題與連結，全文請到原媒體閱讀。",
@@ -90,8 +90,8 @@ C["en"] = dict(
     sec_work="Work", sec_work_t="Two projects I made",
     work_note="Both conceived by me and built with AI-assisted development.",
     works=[
-        dict(name="AKWABA · House of African Taste", sub="MAISON DE GOÛT AFRICAIN", line="A sourced guide to Ivorian culture.", facts=["12 chapters", "36 cards", "8 routes", "9 occasions"], url="/akwaba-maison/en/?utm_source=victseng&utm_medium=website&utm_campaign=works", cta="Open the guide", pat="akan", tone="ivory"),
-        dict(name="Akwaba! An African Adventure", sub="MOBILE WEB GAME", line="An Asian traveller's first trip to West Africa.", facts=["15 stages", "~10–15 min", "Free"], url="/akwaba/en.html?c=site&utm_source=victseng&utm_medium=website&utm_campaign=works", cta="Play now", pat="kita", tone="lagoon"),
+        dict(name="AKWABA · House of African Taste", sub="MAISON DE GOÛT AFRICAIN", line="A sourced guide to Ivorian culture.", facts=["12 chapters", "36 cards", "8 routes", "9 occasions"], url="https://maison.victseng.com/en/?utm_source=victseng&utm_medium=website&utm_campaign=works", cta="Open the guide", pat="akan", tone="ivory"),
+        dict(name="Akwaba! An African Adventure", sub="MOBILE WEB GAME", line="An Asian traveller's first trip to West Africa.", facts=["15 stages", "~10–15 min", "Free"], url="https://play.victseng.com/en.html?c=site&utm_source=victseng&utm_medium=website&utm_campaign=works", cta="Play now", pat="kita", tone="lagoon"),
     ],
     sec_writing="Writing", sec_writing_t="Published articles",
     writing_note="Index only. Articles are in Chinese, on the publisher's site.",
@@ -144,8 +144,8 @@ C["fr"] = dict(
     sec_work="Projets", sec_work_t="Deux projets que j'ai créés",
     work_note="Conçus par moi, développés avec l'aide de l'IA.",
     works=[
-        dict(name="AKWABA · Maison de goût africain", sub="MAISON DE GOÛT AFRICAIN", line="Un guide sourcé de la culture ivoirienne.", facts=["12 chapitres", "36 fiches", "8 itinéraires", "9 occasions"], url="/akwaba-maison/fr/?utm_source=victseng&utm_medium=website&utm_campaign=works", cta="Ouvrir le guide", pat="akan", tone="ivory"),
-        dict(name="Akwaba ! Une aventure africaine", sub="JEU WEB MOBILE", line="Le premier voyage d'un Asiatique en Afrique de l'Ouest.", facts=["15 étapes", "10 à 15 min", "Gratuit"], url="/akwaba/fr.html?c=site&utm_source=victseng&utm_medium=website&utm_campaign=works", cta="Jouer", pat="kita", tone="lagoon"),
+        dict(name="AKWABA · Maison de goût africain", sub="MAISON DE GOÛT AFRICAIN", line="Un guide sourcé de la culture ivoirienne.", facts=["12 chapitres", "36 fiches", "8 itinéraires", "9 occasions"], url="https://maison.victseng.com/fr/?utm_source=victseng&utm_medium=website&utm_campaign=works", cta="Ouvrir le guide", pat="akan", tone="ivory"),
+        dict(name="Akwaba ! Une aventure africaine", sub="JEU WEB MOBILE", line="Le premier voyage d'un Asiatique en Afrique de l'Ouest.", facts=["15 étapes", "10 à 15 min", "Gratuit"], url="https://play.victseng.com/fr.html?c=site&utm_source=victseng&utm_medium=website&utm_campaign=works", cta="Jouer", pat="kita", tone="lagoon"),
     ],
     sec_writing="Articles", sec_writing_t="Articles publiés",
     writing_note="Index seulement. Articles en chinois, sur le site de l'éditeur.",

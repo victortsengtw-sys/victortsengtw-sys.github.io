@@ -394,7 +394,7 @@ def person_ld(lang, c):
             "alumniOf": [{"@type": "CollegeOrUniversity", "name": n} for n in ("IAE Paris-Est", "HEC Paris", "National Sun Yat-sen University")],
             "knowsLanguage": ["zh", "en", "fr"],
             "knowsAbout": ["African art", "Lifestyle in Abidjan", "Cross-cultural communication", "African business", "Côte d'Ivoire", "International market development"],
-            "sameAs": [LINKEDIN, DOMAIN + "/akwaba-maison/", DOMAIN + "/akwaba/"]}
+            "sameAs": [LINKEDIN, "https://maison.victseng.com/", "https://play.victseng.com/"]}
 
 
 def stat_li(n, t):
