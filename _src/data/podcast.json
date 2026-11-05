@@ -1,0 +1,13 @@
+{
+  "_說明": "live 改成 true 就會在三語首頁出現 Podcast 區塊和選單。新集數加在 episodes 最前面；notes 填對應文章的網址代稱，文章頁就會自動出現「收聽這一集」。連結留空的平台不會顯示。",
+  "live": false,
+  "launch": {"zh": "第三季 2027 年 2 月開播", "en": "Season 3 launches February 2027", "fr": "La saison 3 commence en février 2027"},
+  "links": {
+    "spotify": "https://open.spotify.com/show/0SCrKBM8zz7c3s3AzvVR3v",
+    "apple": "",
+    "kkbox": "",
+    "youtube": "",
+    "firstory": ""
+  },
+  "episodes": []
+}

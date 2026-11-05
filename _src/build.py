@@ -22,6 +22,60 @@ for _f in sorted(glob.glob(os.path.join(HERE, "data", "img", "*.json"))):
 CFG = json.load(open(os.path.join(HERE, "data", "config.json"), encoding="utf-8"))
 MAP = json.load(open(os.path.join(HERE, "data", "map.json")))
 PRESS = json.load(open(os.path.join(HERE, "data", "press.json"), encoding="utf-8"))
+POD = json.load(open(os.path.join(HERE, "data", "podcast.json"), encoding="utf-8"))
+if os.environ.get("POD_PREVIEW"):
+    POD["live"] = True
+POD_LIVE = bool(POD.get("live"))
+POD_PLAT = [("spotify", "Spotify"), ("apple", "Apple Podcasts"), ("kkbox", "KKBOX"), ("youtube", "YouTube"), ("firstory", "Firstory")]
+
+
+def nav_for(c):
+    nav = list(c["nav"])
+    if POD_LIVE:
+        i = [k for k, _ in nav].index("notes") + 1
+        nav.insert(i, ("podcast", c["pod_nav"]))
+    return nav
+
+
+def pod_url(url, campaign):
+    if not url:
+        return url
+    return url + ("&" if "?" in url else "?") + "utm_source=victseng&utm_medium=referral&utm_campaign=" + campaign
+
+
+def podcast_section(lang, c, sh):
+    eps = POD.get("episodes") or []
+    rows = "".join(f"""<li class="rv"><a class="row" href="{e(pod_url(ep['url'], 'site_home'))}" target="_blank" rel="noopener">
+      <span class="row-m"><span>{e(ep.get('code', ''))}</span><time datetime="{ep['date']}">{fmt_date(ep['date'], lang)}</time></span>
+      <span class="row-t">{e(ep['title'].get(lang) or ep['title']['zh'])}</span>
+      <span class="row-go">{e(c['pod_listen'])} {I_OUT}</span></a></li>""" for ep in eps[:3])
+    if not rows:
+        rows = f'<li class="rv"><p class="row"><span class="row-m"><span>{e(c["pod_season"])}</span></span><span class="row-t">{e(POD["launch"][lang])}</span></p></li>'
+    plats = "".join(f'<a class="tl" href="{e(pod_url(POD["links"][k], "site_home"))}" target="_blank" rel="noopener">{n} {I_OUT}</a>'
+                    for k, n in POD_PLAT if POD["links"].get(k))
+    return f"""<section id="podcast" class="sec alt pc">
+    <div class="wrap">{sh('podcast', c['pod_k'], c['pod_t'], c['pod_n'])}
+      <p class="cap pc-s rv">{e(c['pod_season'])}</p>
+      <ul class="rows">{rows}
+      </ul>
+      <div class="pc-pl rv">{plats}</div>
+      <aside class="pc-sub rv">
+        <div><p class="pc-sub-t">{e(c['pod_sub_t'])}</p><p class="pc-sub-d">{e(c['pod_sub_d'])}</p></div>
+        <a class="btn" href="{mailto(c['pod_sub_subject'])}">{e(c['pod_sub_btn'])} {I_ARROW}</a>
+      </aside>
+    </div>
+  </section>"""
+
+
+def pod_for_note(slug, lang, c):
+    if not POD_LIVE:
+        return ""
+    for ep in POD.get("episodes") or []:
+        if slug in (ep.get("notes") or []):
+            t = ep["title"].get(lang) or ep["title"]["zh"]
+            return f"""<aside class="pc-note"><p class="cap">{e(c['pod_note_k'])}</p><p class="pc-note-t">{e(ep.get('code', ''))} · {e(t)}</p>
+      <a class="tl" href="{e(pod_url(ep['url'], 'site_' + slug))}" target="_blank" rel="noopener">{e(c['pod_note_go'])} {I_OUT}</a></aside>"""
+    return ""
 LANG_NAME = {"zh": "中文", "en": "English", "fr": "Français"}
 
 I_ARROW = '<svg aria-hidden="true" class="ic" viewBox="0 0 24 24" width="16" height="16"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>'
@@ -317,7 +371,7 @@ def header(lang, c, alts, on_home):
         f'<a href="{alts.get(l, PATHS[l])}" hreflang="{HREFLANG[l]}" lang="{C[l]["html_lang"]}"' + (' aria-current="page"' if l == lang else "") + f">{LANG_LABEL[l]}</a>"
         for l in LANGS)
     pre = "" if on_home else home(lang)
-    nav = "".join(f'<a href="{pre}#{i}" data-sec="{i}"><span class="n">{n:02d}</span>{e(t)}</a>' for n, (i, t) in enumerate(c["nav"], 1))
+    nav = "".join(f'<a href="{pre}#{i}" data-sec="{i}"><span class="n">{n:02d}</span>{e(t)}</a>' for n, (i, t) in enumerate(nav_for(c), 1))
     return f"""<body class="l-{lang}{' is-home' if on_home else ''}">
 <a class="skip" href="#main">{e(c['skip'])}</a>
 <div class="prog" aria-hidden="true"><i></i></div>
@@ -528,9 +582,12 @@ def home_page(lang):
     route = "".join(f'<li><span class="rt-c">{e(ci)}</span><span class="rt-y">{e(y)}</span></li>' for ci, y in c["route"])
     hls = "".join(f"""<li class="hl rv"><p class="cap">{e(k)}</p><h3>{e(o)}</h3><p class="hl-d">{e(d)}</p><p class="hl-w">{e(wh)}</p></li>""" for k, o, d, wh in c["highlights"])
     orgs = "".join(f"<li>{e(o)}</li>" for o in ORGS)
-    total = len(c["nav"])
+    navl = nav_for(c)
+    total = len(navl)
+    num = {k: i + 1 for i, (k, _) in enumerate(navl)}
 
     def sh(n, kicker, title, note=""):
+        n = num[n] if isinstance(n, str) else n
         return f'<header class="sh rv"><p class="sh-k"><span>{n:02d} / {total:02d}</span>{e(kicker)}</p><h2>{e(title)}</h2>{f"<p class=sh-n>{e(note)}</p>" if note else ""}</header>'
 
     body = f"""
@@ -559,7 +616,7 @@ def home_page(lang):
   <section class="st" aria-label="Highlights"><ul class="wrap st-g">{stats}</ul></section>
 
   <section id="expertise" class="sec">
-    <div class="wrap">{sh(1, c['sec_expertise'], c['sec_expertise_t'])}
+    <div class="wrap">{sh('expertise', c['sec_expertise'], c['sec_expertise_t'])}
       <ol class="pls">{pillars}
       </ol>
     </div>
@@ -568,14 +625,14 @@ def home_page(lang):
   {banner(lang, c)}
 
   <section id="work" class="sec dark">
-    <div class="wrap">{sh(2, c['sec_work'], c['sec_work_t'])}
+    <div class="wrap">{sh('work', c['sec_work'], c['sec_work_t'])}
       <div class="wks">{works}
       </div>
     </div>
   </section>
 
   <section id="notes" class="sec">
-    <div class="wrap">{sh(3, c['sec_notes'], c['sec_notes_t'], c['notes_note'])}
+    <div class="wrap">{sh('notes', c['sec_notes'], c['sec_notes_t'], c['notes_note'])}
       {cat_tiles(lang, c)}
       <ul class="rows">{notes}
       </ul>
@@ -583,17 +640,19 @@ def home_page(lang):
     </div>
   </section>
 
+  {podcast_section(lang, c, sh) if POD_LIVE else ""}
+
   {newsletter(lang, c)}
 
   <section id="press" class="sec alt">
-    <div class="wrap">{sh(4, c['sec_press'], c['sec_press_t'], c['press_note'])}
+    <div class="wrap">{sh('press', c['sec_press'], c['sec_press_t'], c['press_note'])}
       <ul class="rows">{press}
       </ul>
     </div>
   </section>
 
   <section id="experience" class="sec">
-    <div class="wrap">{sh(5, c['sec_exp'], c['exp_t'])}
+    <div class="wrap">{sh('experience', c['sec_exp'], c['exp_t'])}
       <div class="ex">
         {map_svg(lang, c)}
         <ul class="hls">{hls}</ul>
@@ -605,7 +664,7 @@ def home_page(lang):
   </section>
 
   <section id="contact" class="sec dark ct">
-    <div class="wrap">{sh(6, c['sec_contact'], c['contact_t'], c['contact_line'])}
+    <div class="wrap">{sh('contact', c['sec_contact'], c['contact_t'], c['contact_line'])}
       <div class="ctas rv">
         <a class="btn btn-l" href="{mailto(c['contact_subject'])}">{I_MAIL} {e(c['email_btn'])}</a>
         <a class="tl tl-l" href="{LINKEDIN}" target="_blank" rel="noopener me">{I_LI} LinkedIn {I_OUT}</a>
@@ -709,6 +768,7 @@ def note_page(slug, lang):
     <div class="prose">{enrich(slug, lang, n['html'])}</div>
     <ul class="art-tags">{tags}</ul>
     <p class="motif-n">{e(c['motif_note'].format(m=CAT_MOTIF[lang][cat_key(n)]))}</p>
+    {pod_for_note(slug, lang, c)}
     {related(slug, lang, c)}
     <aside class="art-cta">
       <p>{e(c['note_cta_t'])}</p>

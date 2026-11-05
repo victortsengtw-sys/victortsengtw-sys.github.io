@@ -14,3 +14,4 @@ Victor Tseng 曾浩瑜 的個人網站（作者中心），三語：繁中 `/`�
 - **新增文章（現場筆記）**：在 `_src/notes/<網址代稱>/` 建立 `zh.md`（可再加 `en.md`、`fr.md`），開頭填 title、description、date、pillar、tags。想先存草稿不上線，就加一行 `draft: true`。
 - **改首頁文字**：`_src/content.py`（三語都在這裡）。
 - **本機重建**：`cd _src && pip install markdown && python3 build.py ..`
+- **Podcast 區塊**：`_src/data/podcast.json`。開播時把 `live` 改成 `true`，三語首頁就會出現 Podcast 區塊和選單；新集數加在 `episodes` 最前面，`notes` 填對應文章的網址代稱，文章頁會自動出現「收聽這一集」。

@@ -13,6 +13,12 @@ TNL_1 = "https://www.thenewslens.com/article/269647"
 C = {}
 
 C["zh"] = dict(
+    pod_nav="Podcast", pod_k="Podcast", pod_t="Victor 的關鍵對話",
+    pod_n="跨文化職場裡，那些卡住的對話：我當時怎麼說、後來才懂什麼、現在會怎麼說。每集 8–12 分鐘。",
+    pod_season="第三季｜在別人的文化裡開口", pod_listen="收聽",
+    pod_sub_t="你也有一段卡住的對話嗎？", pod_sub_d="第四季會回答聽眾投稿的情境。不會公開你的姓名與公司。",
+    pod_sub_btn="投稿你的對話", pod_sub_subject="Podcast 投稿",
+    pod_note_k="這篇有一集對應的 Podcast", pod_note_go="收聽這一集",
     html_lang="zh-Hant", og_locale="zh_TW",
     title="曾浩瑜 Victor Tseng｜非洲 × 亞洲 跨文化市場開發",
     description="曾浩瑜（Victor Tseng），駐點象牙海岸阿比讓（Abidjan，又譯阿比尚）的跨文化市場開發顧問。專長：非洲藝術與品味、生活風格、跨文化溝通、非洲商業與市場。",
@@ -67,6 +73,12 @@ C["zh"] = dict(
 )
 
 C["en"] = dict(
+    pod_nav="Podcast", pod_k="Podcast · in Mandarin", pod_t="Across the Table",
+    pod_n="My Mandarin-language podcast (《Victor 的關鍵對話》) on the conversations that get stuck when you work across cultures: what I said, what I understood later, what I would say now. 8–12 minutes an episode.",
+    pod_season="Season 3 · Speaking up in someone else's culture", pod_listen="Listen",
+    pod_sub_t="Got a conversation that went sideways?", pod_sub_d="Season 4 answers listeners' situations. Your name and company are never mentioned.",
+    pod_sub_btn="Send me yours", pod_sub_subject="Podcast story",
+    pod_note_k="There is a podcast episode on this (in Mandarin)", pod_note_go="Listen to the episode",
     html_lang="en", og_locale="en_US",
     title="Victor Tseng | Africa × Asia Cross-cultural Market Development",
     description="Victor Tseng (曾浩瑜), a cross-cultural market development consultant based in Abidjan, Côte d'Ivoire. African art & taste, lifestyle, cross-cultural communication, African business & markets.",
@@ -121,6 +133,12 @@ C["en"] = dict(
 )
 
 C["fr"] = dict(
+    pod_nav="Podcast", pod_k="Podcast · en mandarin", pod_t="Across the Table",
+    pod_n="Mon podcast en mandarin (《Victor 的關鍵對話》) sur les conversations qui coincent quand on travaille entre cultures : ce que j'ai dit, ce que j'ai compris plus tard, ce que je dirais aujourd'hui. 8 à 12 minutes par épisode.",
+    pod_season="Saison 3 · Prendre la parole dans la culture des autres", pod_listen="Écouter",
+    pod_sub_t="Une conversation qui a coincé ?", pod_sub_d="La saison 4 répond aux situations des auditeurs. Ni votre nom ni votre entreprise ne sont cités.",
+    pod_sub_btn="Racontez-la-moi", pod_sub_subject="Podcast · témoignage",
+    pod_note_k="Un épisode du podcast en parle (en mandarin)", pod_note_go="Écouter l'épisode",
     html_lang="fr", og_locale="fr_FR",
     title="Victor Tseng | Afrique × Asie, développement de marchés et interculturel",
     description="Victor Tseng (曾浩瑜), consultant en développement de marchés et interculturel basé à Abidjan, Côte d'Ivoire. Art africain, art de vivre, communication interculturelle, business et marchés africains.",

@@ -543,3 +543,16 @@ ul,ol{list-style:none;margin:0;padding:0}
   .l-en .who,.l-fr .who{gap:6px}
   .l-en .arch,.l-fr .arch{margin-top:30px;width:min(48vw,200px)}
 }
+
+/* ---------- podcast ---------- */
+.pc-s{color:var(--gold);margin-bottom:18px}
+.pc-pl{display:flex;flex-wrap:wrap;gap:14px 26px;margin-top:26px}
+.pc-sub{display:grid;gap:18px;margin-top:40px;padding:28px 24px;background:var(--paper);border:1px solid var(--line)}
+.pc-sub-t{font:400 20px/1.5 var(--serif);letter-spacing:.04em}
+.pc-sub-d{margin-top:6px;color:var(--taupe);font-size:13.5px}
+.pc-sub .btn{justify-self:start}
+@media (min-width:860px){.pc-sub{grid-template-columns:1fr auto;align-items:center;padding:32px 36px}}
+.pc-note{margin:40px 0 0;padding:24px 22px;border-top:1px solid var(--gold);background:var(--paper);display:grid;gap:10px}
+.pc-note .cap{color:var(--gold)}
+.pc-note-t{font:400 18px/1.5 var(--serif);letter-spacing:.03em}
+.pc-note .tl{justify-self:start}
