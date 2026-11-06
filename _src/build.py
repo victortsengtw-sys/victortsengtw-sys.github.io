@@ -831,8 +831,8 @@ def anansi_page(lang="zh"):
     c = L(lang)
     alts = ANANSI_ALTS
     yt = "https://www.youtube.com/@victorinafrica"
-    title = "阿南西講古｜西非老故事，黏土動畫說給你聽"
-    desc = "用黏土逐格動畫重新講西非阿坎族的阿南西蜘蛛故事。每集附故事出處與文化小筆記。"
+    title = "阿南西講古｜西非老故事，用黏土風格動畫說給你聽"
+    desc = "用黏土風格的 3D 動畫重新講西非阿坎族的阿南西蜘蛛故事。每集附故事出處與文化小筆記。"
     ld = {"@context": "https://schema.org", "@type": "VideoObject", "name": "阿南西講古 EP1 智慧罐",
           "description": "阿南西想把全世界的智慧裝進罐子藏到樹頂，兒子一句話讓他氣到把罐子摔碎。改編自西非阿坎族民間故事。",
           "thumbnailUrl": DOMAIN + "/assets/anansi/ep1-poster.jpg", "contentUrl": DOMAIN + "/assets/anansi/ep1.mp4",
@@ -850,9 +850,9 @@ def anansi_page(lang="zh"):
     <nav class="crumb"><a href="{home(lang)}">{e(c['back'])}</a><span>/</span><span>阿南西講古</span></nav>
     <header class="art-h">
       <span class="art-band" style="{pat('kita_light')}" aria-hidden="true"></span>
-      <p class="sh-k">黏土動畫系列</p>
+      <p class="sh-k">黏土風格動畫系列</p>
       <h1>阿南西講古</h1>
-      <p class="an-lede">阿南西是西非阿坎族民間故事裡的蜘蛛。他聰明、貪心又愛面子，常常被自己的聰明害到。這個系列用黏土逐格動畫重新講他的故事，每一集都寫清楚出自哪個民族、哪本書。</p>
+      <p class="an-lede">阿南西是西非阿坎族民間故事裡的蜘蛛。他聰明、貪心又愛面子，常常被自己的聰明害到。這個系列用黏土風格的 3D 動畫重新講他的故事，每一集都寫清楚出自哪個民族、哪本書。</p>
       <p class="art-m"><span>{e(c['by'])} Victor Tseng 曾浩瑜</span><span>每兩週週四 20:00（台灣時間）更新</span></p>
     </header>
 
@@ -882,7 +882,7 @@ def anansi_page(lang="zh"):
     <section class="an-cast" aria-labelledby="cast">
       <h2 id="cast" class="an-h2">角色</h2>
       <div class="an-cast-g">
-        <figure><img src="/assets/anansi/anansi.jpg" width="600" height="600" alt="黏土動畫角色阿南西：戴著黃色帽子、繫彩色條紋腰帶的深棕色蜘蛛" loading="lazy"><figcaption><strong>阿南西 Kwaku Ananse</strong>聰明、貪心、愛面子。八隻腳，上面四隻當手用。</figcaption></figure>
+        <figure><img src="/assets/anansi/anansi.jpg" width="600" height="600" alt="黏土風格動畫角色阿南西：戴著黃色帽子、繫彩色條紋腰帶的深棕色蜘蛛" loading="lazy"><figcaption><strong>阿南西 Kwaku Ananse</strong>聰明、貪心、愛面子。八隻腳，上面四隻當手用。</figcaption></figure>
         <figure><img src="/assets/anansi/family.jpg" width="600" height="600" alt="夜晚，阿南西坐在地上，兒子恩提庫馬拍著他的背" loading="lazy"><figcaption><strong>恩提庫馬 Ntikuma</strong>阿南西的兒子，敢當面講真話。<br><strong>阿索 Aso</strong>阿南西的妻子，家裡真正的軍師，下一集登場。</figcaption></figure>
       </div>
     </section>
@@ -900,7 +900,7 @@ def anansi_page(lang="zh"):
     <div class="prose an-src">
       <h2>參考資料</h2>
       <ol>{srcs}</ol>
-      <p class="an-note">角色造型為原創設計。© 2026 Victor Tseng 曾浩瑜</p>
+      <p class="an-note">黏土風格的 3D 動畫，用 AI 工具製作；角色造型為原創設計。© 2026 Victor Tseng 曾浩瑜</p>
     </div>
   </article>
 </main>
@@ -925,8 +925,8 @@ ANANSI_EPS_FR = [
 def anansi_page_fr():
     lang = "fr"
     c = L(lang)
-    title = "Les contes d’Anansi · Contes d’Afrique de l’Ouest en pâte à modeler"
-    desc = "Les histoires de l’araignée Anansi, tirées des contes akan, racontées en animation image par image en pâte à modeler. Chaque épisode cite ses sources."
+    title = "Les contes d’Anansi · Contes d’Afrique de l’Ouest en animation style pâte à modeler"
+    desc = "Les histoires de l’araignée Anansi, tirées des contes akan, racontées en animation 3D style pâte à modeler. Chaque épisode cite ses sources."
     ld = {"@context": "https://schema.org", "@type": "VideoObject", "name": "Les contes d’Anansi EP1 · Le pot de la sagesse",
           "description": "Anansi veut cacher toute la sagesse du monde dans un pot, en haut d’un arbre. Une phrase de son fils le met tellement en colère qu’il brise le pot. Adapté d’un conte akan d’Afrique de l’Ouest.",
           "thumbnailUrl": DOMAIN + "/assets/anansi/ep1-poster-fr.jpg", "contentUrl": DOMAIN + "/assets/anansi/ep1-fr.mp4",
@@ -947,9 +947,9 @@ def anansi_page_fr():
     <nav class="crumb"><a href="{home(lang)}">{e(c['back'])}</a><span>/</span><span>Les contes d’Anansi</span></nav>
     <header class="art-h">
       <span class="art-band" style="{pat('kita_light')}" aria-hidden="true"></span>
-      <p class="sh-k">Série d’animation en pâte à modeler</p>
+      <p class="sh-k">Série d’animation style pâte à modeler</p>
       <h1>Les contes d'Anansi</h1>
-      <p class="an-lede">Anansi est l’araignée des contes du peuple akan, au Ghana et en Côte d’Ivoire, où on l’appelle aussi Kacou Ananzè. Rusé, gourmand et orgueilleux, il se fait souvent piéger par sa propre malice. Cette série raconte ses histoires en animation image par image, en pâte à modeler, et chaque épisode précise de quel peuple et de quel livre vient le conte.</p>
+      <p class="an-lede">Anansi est l’araignée des contes du peuple akan, au Ghana et en Côte d’Ivoire, où on l’appelle aussi Kacou Ananzè. Rusé, gourmand et orgueilleux, il se fait souvent piéger par sa propre malice. Cette série raconte ses histoires en animation 3D style pâte à modeler, et chaque épisode précise de quel peuple et de quel livre vient le conte.</p>
       <p class="art-m"><span>{e(c['by'])} Victor Tseng 曾浩瑜</span><span>Un nouvel épisode un jeudi sur deux</span></p>
     </header>
 
@@ -978,7 +978,7 @@ def anansi_page_fr():
     <section class="an-cast" aria-labelledby="cast">
       <h2 id="cast" class="an-h2">Les personnages</h2>
       <div class="an-cast-g">
-        <figure><img src="/assets/anansi/anansi.jpg" width="600" height="600" alt="Anansi en pâte à modeler : une araignée brun foncé avec un chapeau jaune et une ceinture à rayures colorées" loading="lazy"><figcaption><strong>Anansi · Kwaku Ananse</strong>Malin, gourmand et orgueilleux. Il a huit pattes et se sert des quatre du haut comme de mains.</figcaption></figure>
+        <figure><img src="/assets/anansi/anansi.jpg" width="600" height="600" alt="Anansi, style pâte à modeler : une araignée brun foncé avec un chapeau jaune et une ceinture à rayures colorées" loading="lazy"><figcaption><strong>Anansi · Kwaku Ananse</strong>Malin, gourmand et orgueilleux. Il a huit pattes et se sert des quatre du haut comme de mains.</figcaption></figure>
         <figure><img src="/assets/anansi/family.jpg" width="600" height="600" alt="La nuit, Anansi assis par terre, son fils Ntikuma lui tapote le dos" loading="lazy"><figcaption><strong>Ntikuma</strong>Le fils d’Anansi, qui ose lui dire la vérité en face.<br><strong>Aso</strong>La femme d’Anansi, la vraie stratège de la famille. Elle arrive dans le prochain épisode.</figcaption></figure>
       </div>
     </section>
@@ -996,7 +996,7 @@ def anansi_page_fr():
     <div class="prose an-src">
       <h2>Sources</h2>
       <ol>{srcs}</ol>
-      <p class="an-note">Personnages créés pour la série. © 2026 Victor Tseng 曾浩瑜</p>
+      <p class="an-note">Animation 3D style pâte à modeler, réalisée avec des outils d’IA ; personnages créés pour la série. © 2026 Victor Tseng 曾浩瑜</p>
     </div>
   </article>
 </main>
@@ -1018,8 +1018,8 @@ ANANSI_EPS_EN = [
 def anansi_page_en():
     lang = "en"
     c = L(lang)
-    title = "Anansi Tales · West African folktales in clay animation"
-    desc = "Stories of Anansi the spider from Akan folklore, retold in handmade clay stop-motion animation. Every episode names the people and the book the tale comes from."
+    title = "Anansi Tales · West African folktales in clay-style animation"
+    desc = "Stories of Anansi the spider from Akan folklore, retold in clay-style 3D animation. Every episode names the people and the book the tale comes from."
     ld = {"@context": "https://schema.org", "@type": "VideoObject", "name": "Anansi Tales EP1 · The Pot of Wisdom",
           "description": "Anansi wants to hide all the world's wisdom in a pot at the top of a tree. One sentence from his son makes him so angry that he smashes the pot. Adapted from an Akan folktale of West Africa.",
           "thumbnailUrl": DOMAIN + "/assets/anansi/ep1-poster-en.jpg", "contentUrl": DOMAIN + "/assets/anansi/ep1-en.mp4",
@@ -1040,9 +1040,9 @@ def anansi_page_en():
     <nav class="crumb"><a href="{home(lang)}">{e(c['back'])}</a><span>/</span><span>Anansi Tales</span></nav>
     <header class="art-h">
       <span class="art-band" style="{pat('kita_light')}" aria-hidden="true"></span>
-      <p class="sh-k">Clay animation series</p>
+      <p class="sh-k">Clay-style animation series</p>
       <h1>Anansi Tales</h1>
-      <p class="an-lede">Anansi is the spider of Akan folktales from Ghana and Côte d'Ivoire, where he is also known as Kacou Ananzè. Clever, greedy and proud, he is often caught out by his own cleverness. This series retells his stories in handmade clay stop-motion, and every episode names the people and the book each tale comes from.</p>
+      <p class="an-lede">Anansi is the spider of Akan folktales from Ghana and Côte d'Ivoire, where he is also known as Kacou Ananzè. Clever, greedy and proud, he is often caught out by his own cleverness. This series retells his stories in clay-style 3D animation, and every episode names the people and the book each tale comes from.</p>
       <p class="art-m"><span>{e(c['by'])} Victor Tseng 曾浩瑜</span><span>A new episode every other Thursday</span></p>
     </header>
 
@@ -1072,7 +1072,7 @@ def anansi_page_en():
     <section class="an-cast" aria-labelledby="cast">
       <h2 id="cast" class="an-h2">Characters</h2>
       <div class="an-cast-g">
-        <figure><img src="/assets/anansi/anansi.jpg" width="600" height="600" alt="Anansi in clay: a dark brown spider with a yellow hat and a colourful striped belt" loading="lazy"><figcaption><strong>Anansi · Kwaku Ananse</strong>Clever, greedy and proud. He has eight legs and uses the top four as hands.</figcaption></figure>
+        <figure><img src="/assets/anansi/anansi.jpg" width="600" height="600" alt="Anansi in clay style: a dark brown spider with a yellow hat and a colourful striped belt" loading="lazy"><figcaption><strong>Anansi · Kwaku Ananse</strong>Clever, greedy and proud. He has eight legs and uses the top four as hands.</figcaption></figure>
         <figure><img src="/assets/anansi/family.jpg" width="600" height="600" alt="At night, Anansi sits on the ground while his son Ntikuma pats his back" loading="lazy"><figcaption><strong>Ntikuma</strong>Anansi's son, who dares to tell him the truth.<br><strong>Aso</strong>Anansi's wife and the family's real strategist. She appears in the next episode.</figcaption></figure>
       </div>
     </section>
@@ -1090,7 +1090,7 @@ def anansi_page_en():
     <div class="prose an-src">
       <h2>References</h2>
       <ol>{srcs}</ol>
-      <p class="an-note">Characters designed for the series. © 2026 Victor Tseng 曾浩瑜</p>
+      <p class="an-note">Clay-style 3D animation made with AI tools; characters designed for the series. © 2026 Victor Tseng 曾浩瑜</p>
     </div>
   </article>
 </main>
