@@ -797,6 +797,107 @@ def copyright_page(lang):
             + header(lang, c, alts, False) + body + footer(lang, c, alts, search_index(lang, c)))
 
 
+# ---------------------------------------------------------------- 阿南西講古 (animation series, zh only for now)
+ANANSI_PATH = "/anansi/"
+ANANSI_EPS = [
+    ("EP1", "智慧罐", "阿坎族", "已上線"),
+    ("EP2", "故事是怎麼來的", "阿坎族", "下一集"),
+    ("EP3", "我的名字叫「大家」", "伊博族", ""),
+    ("EP4", "回頭拿，不丟臉", "阿坎族", ""),
+    ("EP5", "小兔 Leuk 與鬣狗 Bouki", "塞內加爾", ""),
+    ("EP6", "這句真的是非洲諺語嗎？", "查證特別篇", ""),
+]
+ANANSI_SRC = [
+    ("W. H. Barker & Cecilia Sinclair, West African Folk-Tales (London: Harrap, 1917)", "https://www.gutenberg.org/ebooks/66923"),
+    ("Britannica, “Ananse”", "https://www.britannica.com/topic/Ananse"),
+    ("R. S. Rattray, Akan-Ashanti Folk-Tales (1930)，引自 Legon Journal of the Humanities 30.1 (2019)", "https://core.ac.uk/download/478450654.pdf"),
+    ("Bernard B. Dadié, Le Pagne noir (Présence Africaine, 1955)", "https://catalogue.bnf.fr/ark:/12148/cb329730022"),
+    ("Ananse Ntontan，釋義出自 W. Bruce Willis, The Adinkra Dictionary", "https://adinkrasymbols.org/symbols/ananse-ntentan"),
+]
+
+
+def anansi_page(lang="zh"):
+    c = L(lang)
+    alts = {"zh": ANANSI_PATH}
+    yt = "https://www.youtube.com/@victorinafrica"
+    title = "阿南西講古｜西非老故事，黏土動畫說給你聽"
+    desc = "用黏土逐格動畫重新講西非阿坎族的阿南西蜘蛛故事。每集附故事出處與文化小筆記。"
+    ld = {"@context": "https://schema.org", "@type": "VideoObject", "name": "阿南西講古 EP1 智慧罐",
+          "description": "阿南西想把全世界的智慧裝進罐子藏到樹頂，兒子一句話讓他氣到把罐子摔碎。改編自西非阿坎族民間故事。",
+          "thumbnailUrl": DOMAIN + "/assets/anansi/ep1-poster.jpg", "contentUrl": DOMAIN + "/assets/anansi/ep1.mp4",
+          "uploadDate": "2026-11-19", "duration": "PT1M8S", "inLanguage": "zh-Hant",
+          "creator": person_ld(lang, c)}
+    eps = "".join(
+        f'<li class="an-ep"><span class="an-ep-n">{n}</span><span class="an-ep-t">{e(t)}</span><span class="an-ep-o">{e(o)}</span>'
+        + (f'<span class="an-ep-s">{e(s)}</span>' if s else "") + "</li>" for n, t, o, s in ANANSI_EPS)
+    srcs = "".join(f'<li><a class="il" href="{u}" target="_blank" rel="noopener">{e(t)}</a></li>' for t, u in ANANSI_SRC)
+    game = "https://play.victseng.com/?c=site&utm_source=victseng&utm_medium=website&utm_campaign=anansi"
+    maison = "https://maison.victseng.com/?utm_source=victseng&utm_medium=website&utm_campaign=anansi"
+    body = f"""
+<main id="main" class="page">
+  <article class="wrap art anp">
+    <nav class="crumb"><a href="{home(lang)}">{e(c['back'])}</a><span>/</span><span>阿南西講古</span></nav>
+    <header class="art-h">
+      <span class="art-band" style="{pat('kita_light')}" aria-hidden="true"></span>
+      <p class="sh-k">黏土動畫系列</p>
+      <h1>阿南西講古</h1>
+      <p class="an-lede">阿南西是西非阿坎族民間故事裡的蜘蛛。他聰明、貪心又愛面子，常常被自己的聰明害到。這個系列用黏土逐格動畫重新講他的故事，每一集都寫清楚出自哪個民族、哪本書。</p>
+      <p class="art-m"><span>{e(c['by'])} Victor Tseng 曾浩瑜</span><span>每兩週週四 20:00（台灣時間）更新</span></p>
+    </header>
+
+    <section class="an-ep1" aria-labelledby="ep1">
+      <div class="an-vid"><video controls playsinline preload="metadata" poster="/assets/anansi/ep1-poster.jpg" width="720" height="1280"><source src="/assets/anansi/ep1.mp4" type="video/mp4"></video></div>
+      <div class="an-ep1-t">
+        <p class="sh-k">EP1 · 68 秒</p>
+        <h2 id="ep1" class="an-h2">智慧罐</h2>
+        <p>阿南西想把全世界的智慧都收進一個罐子，藏到最高的樹頂。罐子綁在胸前，他怎麼爬都爬不上去。兒子在樹下說了一句話，他氣到把罐子摔碎，智慧從此散到全世界。</p>
+        <p class="an-q">你最近一次，從比你年輕的人身上學到什麼？</p>
+        <p class="ctas"><a class="btn" href="{yt}" target="_blank" rel="noopener">到 YouTube 留言 {I_ARROW}</a></p>
+      </div>
+    </section>
+
+    <div class="prose">
+      <h2>故事出處</h2>
+      <p>改編自西非阿坎族民間故事〈How Wisdom Became the Property of the Human Race〉，收錄於 W. H. Barker 與 Cecilia Sinclair 編的《West African Folk-Tales》（London: Harrap, 1917）。這本書已進入公有領域，可以在 <a class="il" href="https://www.gutenberg.org/ebooks/66923" target="_blank" rel="noopener">Project Gutenberg</a> 免費閱讀。</p>
+      <p>原故事裡，阿南西把罐子綁在胸前爬不上樹，兒子提醒他綁在背上，他一氣之下把罐子摔碎。動畫裡「爬樹失敗三次」和「兒子在樹下偷笑」是改編加入的情節。</p>
+
+      <h2>文化小筆記</h2>
+      <p><strong>阿坎族是誰。</strong>阿坎人主要住在迦納和象牙海岸，象牙海岸的包勒人（Baoulé）、阿尼人（Agni）都屬於阿坎族群。阿南西的故事，就是他們晚上圍坐著講的故事。</p>
+      <p><strong>「蜘蛛故事」。</strong>在阿坎傳說裡，阿南西向天神 Nyame 買下了天上所有的故事，所以這些故事都叫 Anansesem，意思是「蜘蛛故事」。</p>
+      <p><strong>在象牙海岸，他叫 Kacou Ananzè。</strong>象牙海岸作家 Bernard B. Dadié 在 1955 年的故事集《Le Pagne noir》裡，蜘蛛主角就叫這個名字。</p>
+      <p><strong>蜘蛛網的意思。</strong>阿坎族的 Adinkra 符號裡，有一個叫 Ananse Ntontan，意思是「蜘蛛網」，代表智慧、創意和人生的複雜。</p>
+    </div>
+
+    <section class="an-cast" aria-labelledby="cast">
+      <h2 id="cast" class="an-h2">角色</h2>
+      <div class="an-cast-g">
+        <figure><img src="/assets/anansi/anansi.jpg" width="600" height="600" alt="黏土動畫角色阿南西：戴著黃色帽子、繫彩色條紋腰帶的深棕色蜘蛛" loading="lazy"><figcaption><strong>阿南西 Kwaku Ananse</strong>聰明、貪心、愛面子。八隻腳，上面四隻當手用。</figcaption></figure>
+        <figure><img src="/assets/anansi/family.jpg" width="600" height="600" alt="夜晚，阿南西坐在地上，兒子恩提庫馬拍著他的背" loading="lazy"><figcaption><strong>恩提庫馬 Ntikuma</strong>阿南西的兒子，敢當面講真話。<br><strong>阿索 Aso</strong>阿南西的妻子，家裡真正的軍師，下一集登場。</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="an-list" aria-labelledby="season">
+      <h2 id="season" class="an-h2">第一季</h2>
+      <ol class="an-eps">{eps}</ol>
+    </section>
+
+    <section class="an-more" aria-labelledby="more">
+      <h2 id="more" class="an-h2">想認識更多非洲</h2>
+      <p class="ctas"><a class="btn" href="{game}">玩《Akwaba！非洲大冒險》 {I_ARROW}</a><a class="tl" href="{maison}">逛 AKWABA・非洲品味之家 {I_ARROW}</a></p>
+    </section>
+
+    <div class="prose an-src">
+      <h2>參考資料</h2>
+      <ol>{srcs}</ol>
+      <p class="an-note">角色造型為原創設計。© 2026 Victor Tseng 曾浩瑜</p>
+    </div>
+  </article>
+</main>
+{newsletter(lang, c)}"""
+    return (head(lang, c, title, desc, ANANSI_PATH, alts, "/assets/anansi/og.jpg", "website", ld)
+            + header(lang, c, alts, False) + body + footer(lang, c, alts, search_index(lang, c)))
+
+
 # ---------------------------------------------------------------- write
 def write(path, text):
     full = os.path.join(OUT, path.lstrip("/"))
@@ -812,6 +913,7 @@ for l in LANGS:
         write(cat_path(l, key) + "index.html", cat_page(l, key)); urls.append(({x: cat_path(x, key) for x in LANGS}, cat_path(l, key), None))
 for l in LANGS:
     write(PATHS[l] + "copyright/index.html", copyright_page(l)); urls.append(({x: PATHS[x] + "copyright/" for x in LANGS}, PATHS[l] + "copyright/", None))
+write(ANANSI_PATH + "index.html", anansi_page("zh")); urls.append(({"zh": ANANSI_PATH}, ANANSI_PATH, None))
 for slug, vs in NOTES.items():
     for l in vs:
         write(note_path(l, slug) + "index.html", note_page(slug, l))
