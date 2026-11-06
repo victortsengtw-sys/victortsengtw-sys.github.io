@@ -825,7 +825,7 @@ def anansi_page(lang="zh"):
     ld = {"@context": "https://schema.org", "@type": "VideoObject", "name": "阿南西講古 EP1 智慧罐",
           "description": "阿南西想把全世界的智慧裝進罐子藏到樹頂，兒子一句話讓他氣到把罐子摔碎。改編自西非阿坎族民間故事。",
           "thumbnailUrl": DOMAIN + "/assets/anansi/ep1-poster.jpg", "contentUrl": DOMAIN + "/assets/anansi/ep1.mp4",
-          "uploadDate": "2026-11-19", "duration": "PT1M8S", "inLanguage": "zh-Hant",
+          "uploadDate": "2026-11-06", "duration": "PT1M8S", "inLanguage": "zh-Hant",
           "creator": person_ld(lang, c)}
     eps = "".join(
         f'<li class="an-ep"><span class="an-ep-n">{n}</span><span class="an-ep-t">{e(t)}</span><span class="an-ep-o">{e(o)}</span>'
