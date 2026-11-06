@@ -557,3 +557,28 @@ ul,ol{list-style:none;margin:0;padding:0}
 .pc-note .cap{color:var(--gold)}
 .pc-note-t{font:400 18px/1.5 var(--serif);letter-spacing:.03em}
 .pc-note .tl{justify-self:start}
+
+/* 阿南西講古 (animation series page) */
+.anp .an-lede{font:400 17px/1.95 var(--serif);margin-top:18px;max-width:640px}
+.an-h2{font:500 24px/1.45 var(--serif);letter-spacing:.04em;margin:0 0 18px}
+.an-ep1{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:34px;align-items:start;margin:0 0 56px}
+.an-vid{background:var(--blk);border:1px solid var(--line);aspect-ratio:9/16}
+.an-vid video{display:block;width:100%;height:100%;object-fit:cover}
+.an-ep1-t p{margin:0 0 1.1em;font-size:15.5px;line-height:1.95}
+.an-q{font:500 18px/1.7 var(--serif);border-left:2px solid var(--gold);padding-left:16px}
+.an-cast,.an-list,.an-more{margin:56px 0 0;padding-top:34px;border-top:1px solid var(--line)}
+.an-cast-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.an-cast-g figure{margin:0}
+.an-cast-g img{width:100%;aspect-ratio:1;object-fit:cover;border:1px solid var(--line)}
+.an-cast-g figcaption{font-size:14px;line-height:1.85;margin-top:12px;color:var(--ink2)}
+.an-cast-g figcaption strong{display:block;font:500 15px/1.6 var(--serif);color:var(--ink)}
+.an-eps{display:grid;gap:0}
+.an-ep{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.an-ep-n{font:400 11px/1 var(--mono);letter-spacing:.08em;color:var(--gold);min-width:34px}
+.an-ep-t{font:500 16px/1.5 var(--serif);flex:1 1 200px}
+.an-ep-o{font-size:12.5px;color:var(--taupe)}
+.an-ep-s{font:400 10px/1 var(--lat);letter-spacing:.2em;padding:6px 10px;border:1px solid var(--line2)}
+.an-src{margin-top:56px}
+.an-src ol{list-style:decimal;padding-left:1.3em;font-size:13.5px;line-height:1.9}
+.an-note{font-size:12.5px;color:var(--taupe)}
+@media (max-width:720px){.an-ep1{grid-template-columns:1fr}.an-vid{max-width:340px}.an-cast-g{grid-template-columns:1fr}}
