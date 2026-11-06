@@ -797,7 +797,7 @@ def copyright_page(lang):
             + header(lang, c, alts, False) + body + footer(lang, c, alts, search_index(lang, c)))
 
 
-# ---------------------------------------------------------------- 阿南西講古 (animation series, zh only for now)
+# ---------------------------------------------------------------- 阿南西講古 (animation series, zh + fr)
 ANANSI_PATH = "/anansi/"
 ANANSI_EPS = [
     ("EP1", "智慧罐", "阿坎族", "已上線"),
@@ -818,7 +818,7 @@ ANANSI_SRC = [
 
 def anansi_page(lang="zh"):
     c = L(lang)
-    alts = {"zh": ANANSI_PATH}
+    alts = ANANSI_ALTS
     yt = "https://www.youtube.com/@victorinafrica"
     title = "阿南西講古｜西非老故事，黏土動畫說給你聽"
     desc = "用黏土逐格動畫重新講西非阿坎族的阿南西蜘蛛故事。每集附故事出處與文化小筆記。"
@@ -898,6 +898,101 @@ def anansi_page(lang="zh"):
             + header(lang, c, alts, False) + body + footer(lang, c, alts, search_index(lang, c)))
 
 
+ANANSI_FR_PATH = "/fr/anansi/"
+ANANSI_ALTS = {"zh": ANANSI_PATH, "fr": ANANSI_FR_PATH}
+ANANSI_EPS_FR = [
+    ("EP1", "Le pot de la sagesse", "Akan", "En ligne"),
+    ("EP2", "D’où viennent les histoires", "Akan", "Prochain épisode"),
+    ("EP3", "Je m’appelle « Tout le monde »", "Igbo", ""),
+    ("EP4", "Revenir chercher n’est pas une honte", "Akan", ""),
+    ("EP5", "Leuk le lièvre et Bouki l’hyène", "Sénégal", ""),
+    ("EP6", "Ce proverbe est-il vraiment africain ?", "Épisode vérification", ""),
+]
+
+
+def anansi_page_fr():
+    lang = "fr"
+    c = L(lang)
+    title = "Les contes d’Anansi · Contes d’Afrique de l’Ouest en pâte à modeler"
+    desc = "Les histoires de l’araignée Anansi, tirées des contes akan, racontées en animation image par image en pâte à modeler. Chaque épisode cite ses sources."
+    ld = {"@context": "https://schema.org", "@type": "VideoObject", "name": "Les contes d’Anansi EP1 · Le pot de la sagesse",
+          "description": "Anansi veut cacher toute la sagesse du monde dans un pot, en haut d’un arbre. Une phrase de son fils le met tellement en colère qu’il brise le pot. Adapté d’un conte akan d’Afrique de l’Ouest.",
+          "thumbnailUrl": DOMAIN + "/assets/anansi/ep1-poster-fr.jpg", "contentUrl": DOMAIN + "/assets/anansi/ep1-fr.mp4",
+          "uploadDate": "2026-11-06", "duration": "PT1M8S", "inLanguage": "fr",
+          "creator": person_ld(lang, c)}
+    eps = "".join(
+        f'<li class="an-ep"><span class="an-ep-n">{n}</span><span class="an-ep-t">{e(t)}</span><span class="an-ep-o">{e(o)}</span>'
+        + (f'<span class="an-ep-s">{e(s)}</span>' if s else "") + "</li>" for n, t, o, s in ANANSI_EPS_FR)
+    srcs = "".join(f'<li><a class="il" href="{u}" target="_blank" rel="noopener">{e(t)}</a></li>' for t, u in ANANSI_SRC[:2])
+    srcs += '<li><a class="il" href="https://core.ac.uk/download/478450654.pdf" target="_blank" rel="noopener">R. S. Rattray, Akan-Ashanti Folk-Tales (1930), cité dans Legon Journal of the Humanities 30.1 (2019)</a></li>'
+    srcs += f'<li><a class="il" href="{ANANSI_SRC[3][1]}" target="_blank" rel="noopener">{e(ANANSI_SRC[3][0])}</a></li>'
+    srcs += '<li><a class="il" href="https://adinkrasymbols.org/symbols/ananse-ntentan" target="_blank" rel="noopener">Ananse Ntontan, d’après W. Bruce Willis, The Adinkra Dictionary</a></li>'
+    game = "https://play.victseng.com/?c=site&utm_source=victseng&utm_medium=website&utm_campaign=anansi_fr"
+    maison = "https://maison.victseng.com/?utm_source=victseng&utm_medium=website&utm_campaign=anansi_fr"
+    body = f"""
+<main id="main" class="page">
+  <article class="wrap art anp">
+    <nav class="crumb"><a href="{home(lang)}">{e(c['back'])}</a><span>/</span><span>Les contes d’Anansi</span></nav>
+    <header class="art-h">
+      <span class="art-band" style="{pat('kita_light')}" aria-hidden="true"></span>
+      <p class="sh-k">Série d’animation en pâte à modeler</p>
+      <h1>Les contes d'Anansi</h1>
+      <p class="an-lede">Anansi est l’araignée des contes du peuple akan, au Ghana et en Côte d’Ivoire, où on l’appelle aussi Kacou Ananzè. Rusé, gourmand et orgueilleux, il se fait souvent piéger par sa propre malice. Cette série raconte ses histoires en animation image par image, en pâte à modeler, et chaque épisode précise de quel peuple et de quel livre vient le conte.</p>
+      <p class="art-m"><span>{e(c['by'])} Victor Tseng 曾浩瑜</span><span>Un nouvel épisode un jeudi sur deux</span></p>
+    </header>
+
+    <section class="an-ep1" aria-labelledby="ep1">
+      <div class="an-vid"><video controls playsinline preload="metadata" poster="/assets/anansi/ep1-poster-fr.jpg" width="720" height="1280"><source src="/assets/anansi/ep1-fr.mp4" type="video/mp4"></video></div>
+      <div class="an-ep1-t">
+        <p class="sh-k">EP1 · 68 secondes</p>
+        <h2 id="ep1" class="an-h2">Le pot de la sagesse</h2>
+        <p>Anansi veut réunir toute la sagesse du monde dans un pot et le cacher en haut du plus grand arbre. Le pot attaché sur le ventre, il n’arrive pas à grimper. En bas, son fils lui glisse une idée toute simple. Vexé, Anansi jette le pot par terre, et la sagesse se répand dans le monde entier.</p>
+        <p class="an-q">Qu’as-tu appris récemment d’une personne plus jeune que toi ?</p>
+      </div>
+    </section>
+
+    <div class="prose">
+      <h2>D'où vient ce conte</h2>
+      <p>Adapté du conte akan « How Wisdom Became the Property of the Human Race », publié dans <em>West African Folk-Tales</em> de W. H. Barker et Cecilia Sinclair (London, Harrap, 1917). Le livre est dans le domaine public et se lit gratuitement sur <a class="il" href="https://www.gutenberg.org/ebooks/66923" target="_blank" rel="noopener">Project Gutenberg</a>.</p>
+      <p>Dans le conte d’origine, Anansi attache le pot sur son ventre et ne peut pas grimper. Son fils lui conseille de le mettre dans son dos, et Anansi, furieux, brise le pot. Les trois tentatives ratées et le fils qui observe depuis le pied de l’arbre ont été ajoutés pour l’animation.</p>
+
+      <h2>Petites notes culturelles</h2>
+      <p><strong>Qui sont les Akan.</strong> Les Akan vivent surtout au Ghana et en Côte d’Ivoire. Les Baoulé et les Agni de Côte d’Ivoire font partie de ce groupe. Les histoires d’Anansi, ce sont les contes qu’on se raconte le soir chez eux.</p>
+      <p><strong>Les « histoires de l’araignée ».</strong> Selon la tradition akan, Anansi a acheté au dieu du ciel Nyame toutes les histoires du monde. C’est pourquoi on les appelle Anansesem, « histoires de l’araignée ».</p>
+      <p><strong>En Côte d’Ivoire, il s’appelle Kacou Ananzè.</strong> C’est le nom de l’araignée dans <em>Le Pagne noir</em> (1955), le recueil de contes de l’écrivain ivoirien Bernard B. Dadié.</p>
+      <p><strong>La toile d’araignée.</strong> Parmi les symboles adinkra des Akan, Ananse Ntontan signifie « toile d’araignée ». Il représente la sagesse, la créativité et la complexité de la vie.</p>
+    </div>
+
+    <section class="an-cast" aria-labelledby="cast">
+      <h2 id="cast" class="an-h2">Les personnages</h2>
+      <div class="an-cast-g">
+        <figure><img src="/assets/anansi/anansi.jpg" width="600" height="600" alt="Anansi en pâte à modeler : une araignée brun foncé avec un chapeau jaune et une ceinture à rayures colorées" loading="lazy"><figcaption><strong>Anansi · Kwaku Ananse</strong>Malin, gourmand et orgueilleux. Il a huit pattes et se sert des quatre du haut comme de mains.</figcaption></figure>
+        <figure><img src="/assets/anansi/family.jpg" width="600" height="600" alt="La nuit, Anansi assis par terre, son fils Ntikuma lui tapote le dos" loading="lazy"><figcaption><strong>Ntikuma</strong>Le fils d’Anansi, qui ose lui dire la vérité en face.<br><strong>Aso</strong>La femme d’Anansi, la vraie stratège de la famille. Elle arrive dans le prochain épisode.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="an-list" aria-labelledby="season">
+      <h2 id="season" class="an-h2">Saison 1</h2>
+      <ol class="an-eps">{eps}</ol>
+    </section>
+
+    <section class="an-more" aria-labelledby="more">
+      <h2 id="more" class="an-h2">Pour découvrir l'Afrique autrement</h2>
+      <p class="ctas"><a class="btn" href="{game}">Jouer à « Akwaba ! Une aventure africaine » {I_ARROW}</a><a class="tl" href="{maison}">Découvrir AKWABA · Maison de Goût Africain {I_ARROW}</a></p>
+    </section>
+
+    <div class="prose an-src">
+      <h2>Sources</h2>
+      <ol>{srcs}</ol>
+      <p class="an-note">Personnages créés pour la série. © 2026 Victor Tseng 曾浩瑜</p>
+    </div>
+  </article>
+</main>
+{newsletter(lang, c)}"""
+    return (head(lang, c, title, desc, ANANSI_FR_PATH, ANANSI_ALTS, "/assets/anansi/og.jpg", "website", ld)
+            + header(lang, c, ANANSI_ALTS, False) + body + footer(lang, c, ANANSI_ALTS, search_index(lang, c)))
+
+
 # ---------------------------------------------------------------- write
 def write(path, text):
     full = os.path.join(OUT, path.lstrip("/"))
@@ -913,7 +1008,8 @@ for l in LANGS:
         write(cat_path(l, key) + "index.html", cat_page(l, key)); urls.append(({x: cat_path(x, key) for x in LANGS}, cat_path(l, key), None))
 for l in LANGS:
     write(PATHS[l] + "copyright/index.html", copyright_page(l)); urls.append(({x: PATHS[x] + "copyright/" for x in LANGS}, PATHS[l] + "copyright/", None))
-write(ANANSI_PATH + "index.html", anansi_page("zh")); urls.append(({"zh": ANANSI_PATH}, ANANSI_PATH, None))
+write(ANANSI_PATH + "index.html", anansi_page("zh")); urls.append((ANANSI_ALTS, ANANSI_PATH, None))
+write(ANANSI_FR_PATH + "index.html", anansi_page_fr()); urls.append((ANANSI_ALTS, ANANSI_FR_PATH, None))
 for slug, vs in NOTES.items():
     for l in vs:
         write(note_path(l, slug) + "index.html", note_page(slug, l))
