@@ -557,7 +557,17 @@ def home_page(lang):
         <p class="pl-s">{' <i>·</i> '.join(e(s) for s in tags)}</p>
         <a class="pl-a" href="{cat_path(lang, CAT_KEYS[i])}">{e(c['read_cat'])} · {cat_count(CAT_KEYS[i])} {e(c['n_articles'])} {I_ARROW}</a>
       </li>""" for i, (t, l, tags) in enumerate(c["pillars"]))
-    works = "".join(f"""
+    works = "".join((f"""
+      <a class="wk wk-film rv" href="{w['url']}">
+        <span class="wk-img"><img src="{w['img']}" width="640" height="800" alt="{e(w['alt'])}" loading="lazy"><span class="wk-new">{e(w['badge'])}</span></span>
+        <span class="wk-in">
+          <span class="cap">{e(w['sub'])}</span>
+          <span class="wk-t">{e(w['name'])}</span>
+          <span class="wk-l">{e(w['line'])}</span>
+          <span class="wk-f">{' · '.join(e(f) for f in w['facts'])}</span>
+          <span class="wk-go">{e(w['cta'])} {I_ARROW}</span>
+        </span>
+      </a>""" if w.get('img') else f"""
       <a class="wk wk-{w['tone']} rv" href="{w['url']}">
         <span class="wk-b" style="{pat(w['pat'] + ('_light' if w['tone'] == 'ivory' else '_color'))}" aria-hidden="true"></span>
         <span class="wk-in">
@@ -567,7 +577,7 @@ def home_page(lang):
           <span class="wk-f">{' · '.join(e(f) for f in w['facts'])}</span>
           <span class="wk-go">{e(w['cta'])} {I_ARROW}</span>
         </span>
-      </a>""" for w in c["works"])
+      </a>""") for w in c["works"])
     picked, seen = [], set()
     for s_ in NOTES:
         pn = pillar_name(note_for(s_, lang), lang)
@@ -594,6 +604,7 @@ def home_page(lang):
 <main id="main">
   <section class="hero">
     <div class="wrap hero-g">
+      <a class="hero-new" href="{c['works'][0]['url']}"><span class="hero-new-b">{e(c['works'][0]['badge'])}</span><span class="hero-new-t">{e(c['hero_new'])}</span>{I_ARROW}</a>
       <p class="cap hero-k">Africa × Asia — Cross-cultural</p>
       <h1 class="h1">{lines}</h1>
       <div class="hero-who">
@@ -797,7 +808,7 @@ def copyright_page(lang):
             + header(lang, c, alts, False) + body + footer(lang, c, alts, search_index(lang, c)))
 
 
-# ---------------------------------------------------------------- 阿南西講古 (animation series, zh + fr)
+# ---------------------------------------------------------------- 阿南西講古 (animation series, zh + en + fr)
 ANANSI_PATH = "/anansi/"
 ANANSI_EPS = [
     ("EP1", "智慧罐", "阿坎族", "已上線"),
@@ -899,7 +910,8 @@ def anansi_page(lang="zh"):
 
 
 ANANSI_FR_PATH = "/fr/anansi/"
-ANANSI_ALTS = {"zh": ANANSI_PATH, "fr": ANANSI_FR_PATH}
+ANANSI_EN_PATH = "/en/anansi/"
+ANANSI_ALTS = {"zh": ANANSI_PATH, "en": ANANSI_EN_PATH, "fr": ANANSI_FR_PATH}
 ANANSI_EPS_FR = [
     ("EP1", "Le pot de la sagesse", "Akan", "En ligne"),
     ("EP2", "D’où viennent les histoires", "Akan", "Prochain épisode"),
@@ -993,6 +1005,100 @@ def anansi_page_fr():
             + header(lang, c, ANANSI_ALTS, False) + body + footer(lang, c, ANANSI_ALTS, search_index(lang, c)))
 
 
+ANANSI_EPS_EN = [
+    ("EP1", "The Pot of Wisdom", "Akan", "Out now"),
+    ("EP2", "Where Stories Come From", "Akan", "Next"),
+    ("EP3", "My Name Is “All of You”", "Igbo", ""),
+    ("EP4", "Going Back Is No Shame", "Akan", ""),
+    ("EP5", "Leuk the Hare and Bouki the Hyena", "Senegal", ""),
+    ("EP6", "Is That Really an African Proverb?", "Fact-check special", ""),
+]
+
+
+def anansi_page_en():
+    lang = "en"
+    c = L(lang)
+    title = "Anansi Tales · West African folktales in clay animation"
+    desc = "Stories of Anansi the spider from Akan folklore, retold in handmade clay stop-motion animation. Every episode names the people and the book the tale comes from."
+    ld = {"@context": "https://schema.org", "@type": "VideoObject", "name": "Anansi Tales EP1 · The Pot of Wisdom",
+          "description": "Anansi wants to hide all the world's wisdom in a pot at the top of a tree. One sentence from his son makes him so angry that he smashes the pot. Adapted from an Akan folktale of West Africa.",
+          "thumbnailUrl": DOMAIN + "/assets/anansi/ep1-poster-en.jpg", "contentUrl": DOMAIN + "/assets/anansi/ep1-en.mp4",
+          "uploadDate": "2026-11-06", "duration": "PT1M8S", "inLanguage": "en",
+          "creator": person_ld(lang, c)}
+    eps = "".join(
+        f'<li class="an-ep"><span class="an-ep-n">{n}</span><span class="an-ep-t">{e(t)}</span><span class="an-ep-o">{e(o)}</span>'
+        + (f'<span class="an-ep-s">{e(s)}</span>' if s else "") + "</li>" for n, t, o, s in ANANSI_EPS_EN)
+    srcs = "".join(f'<li><a class="il" href="{u}" target="_blank" rel="noopener">{e(t)}</a></li>' for t, u in ANANSI_SRC[:2])
+    srcs += '<li><a class="il" href="https://core.ac.uk/download/478450654.pdf" target="_blank" rel="noopener">R. S. Rattray, Akan-Ashanti Folk-Tales (1930), cited in Legon Journal of the Humanities 30.1 (2019)</a></li>'
+    srcs += f'<li><a class="il" href="{ANANSI_SRC[3][1]}" target="_blank" rel="noopener">{e(ANANSI_SRC[3][0])}</a></li>'
+    srcs += '<li><a class="il" href="https://adinkrasymbols.org/symbols/ananse-ntentan" target="_blank" rel="noopener">Ananse Ntontan, as defined in W. Bruce Willis, The Adinkra Dictionary</a></li>'
+    game = "https://play.victseng.com/en.html?c=site&utm_source=victseng&utm_medium=website&utm_campaign=anansi_en"
+    maison = "https://maison.victseng.com/en/?utm_source=victseng&utm_medium=website&utm_campaign=anansi_en"
+    body = f"""
+<main id="main" class="page">
+  <article class="wrap art anp">
+    <nav class="crumb"><a href="{home(lang)}">{e(c['back'])}</a><span>/</span><span>Anansi Tales</span></nav>
+    <header class="art-h">
+      <span class="art-band" style="{pat('kita_light')}" aria-hidden="true"></span>
+      <p class="sh-k">Clay animation series</p>
+      <h1>Anansi Tales</h1>
+      <p class="an-lede">Anansi is the spider of Akan folktales from Ghana and Côte d'Ivoire, where he is also known as Kacou Ananzè. Clever, greedy and proud, he is often caught out by his own cleverness. This series retells his stories in handmade clay stop-motion, and every episode names the people and the book each tale comes from.</p>
+      <p class="art-m"><span>{e(c['by'])} Victor Tseng 曾浩瑜</span><span>A new episode every other Thursday</span></p>
+    </header>
+
+    <section class="an-ep1" aria-labelledby="ep1">
+      <div class="an-vid"><video controls playsinline preload="metadata" poster="/assets/anansi/ep1-poster-en.jpg" width="720" height="1280"><source src="/assets/anansi/ep1-en.mp4" type="video/mp4"></video></div>
+      <div class="an-ep1-t">
+        <p class="sh-k">EP1 · 68 seconds</p>
+        <h2 id="ep1" class="an-h2">The Pot of Wisdom</h2>
+        <p>Anansi wants to gather all the world's wisdom in one pot and hide it at the top of the tallest tree. With the pot tied to his chest, he cannot climb. Down below, his son offers a very simple idea. Stung, Anansi throws the pot to the ground, and wisdom spreads across the whole world.</p>
+        <p class="an-q">What did you last learn from someone younger than you?</p>
+        <p class="ctas"><a class="btn" href="https://www.youtube.com/@victorinafrica" target="_blank" rel="noopener">Comment on YouTube {I_ARROW}</a></p>
+      </div>
+    </section>
+
+    <div class="prose">
+      <h2>Where the story comes from</h2>
+      <p>Adapted from the Akan tale “How Wisdom Became the Property of the Human Race”, published in <em>West African Folk-Tales</em> by W. H. Barker and Cecilia Sinclair (London: Harrap, 1917). The book is in the public domain and free to read on <a class="il" href="https://www.gutenberg.org/ebooks/66923" target="_blank" rel="noopener">Project Gutenberg</a>.</p>
+      <p>In the original tale, Anansi ties the pot to his front and cannot climb. His son tells him to tie it on his back, and Anansi smashes the pot in anger. The three failed attempts and the son watching from the foot of the tree were added for the animation.</p>
+
+      <h2>Cultural notes</h2>
+      <p><strong>Who the Akan are.</strong> The Akan live mainly in Ghana and Côte d'Ivoire. The Baoulé and Agni peoples of Côte d'Ivoire belong to this group. Anansi stories are the tales told in their homes in the evening.</p>
+      <p><strong>“Spider stories”.</strong> In Akan tradition, Anansi bought all the stories in the world from the sky god Nyame. That is why they are called Anansesem, “spider stories”.</p>
+      <p><strong>In Côte d'Ivoire, he is Kacou Ananzè.</strong> That is the spider's name in <em>Le Pagne noir</em> (1955), a collection of tales by the Ivorian writer Bernard B. Dadié.</p>
+      <p><strong>The spider's web.</strong> Among the Akan adinkra symbols, Ananse Ntontan means “spider's web”. It stands for wisdom, creativity and the complexity of life.</p>
+    </div>
+
+    <section class="an-cast" aria-labelledby="cast">
+      <h2 id="cast" class="an-h2">Characters</h2>
+      <div class="an-cast-g">
+        <figure><img src="/assets/anansi/anansi.jpg" width="600" height="600" alt="Anansi in clay: a dark brown spider with a yellow hat and a colourful striped belt" loading="lazy"><figcaption><strong>Anansi · Kwaku Ananse</strong>Clever, greedy and proud. He has eight legs and uses the top four as hands.</figcaption></figure>
+        <figure><img src="/assets/anansi/family.jpg" width="600" height="600" alt="At night, Anansi sits on the ground while his son Ntikuma pats his back" loading="lazy"><figcaption><strong>Ntikuma</strong>Anansi's son, who dares to tell him the truth.<br><strong>Aso</strong>Anansi's wife and the family's real strategist. She appears in the next episode.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="an-list" aria-labelledby="season">
+      <h2 id="season" class="an-h2">Season 1</h2>
+      <ol class="an-eps">{eps}</ol>
+    </section>
+
+    <section class="an-more" aria-labelledby="more">
+      <h2 id="more" class="an-h2">Discover more of Africa</h2>
+      <p class="ctas"><a class="btn" href="{game}">Play Akwaba! An African Adventure {I_ARROW}</a><a class="tl" href="{maison}">Visit AKWABA · House of African Taste {I_ARROW}</a></p>
+    </section>
+
+    <div class="prose an-src">
+      <h2>References</h2>
+      <ol>{srcs}</ol>
+      <p class="an-note">Characters designed for the series. © 2026 Victor Tseng 曾浩瑜</p>
+    </div>
+  </article>
+</main>
+{newsletter(lang, c)}"""
+    return (head(lang, c, title, desc, ANANSI_EN_PATH, ANANSI_ALTS, "/assets/anansi/og.jpg", "website", ld)
+            + header(lang, c, ANANSI_ALTS, False) + body + footer(lang, c, ANANSI_ALTS, search_index(lang, c)))
+
+
 # ---------------------------------------------------------------- write
 def write(path, text):
     full = os.path.join(OUT, path.lstrip("/"))
@@ -1010,6 +1116,7 @@ for l in LANGS:
     write(PATHS[l] + "copyright/index.html", copyright_page(l)); urls.append(({x: PATHS[x] + "copyright/" for x in LANGS}, PATHS[l] + "copyright/", None))
 write(ANANSI_PATH + "index.html", anansi_page("zh")); urls.append((ANANSI_ALTS, ANANSI_PATH, None))
 write(ANANSI_FR_PATH + "index.html", anansi_page_fr()); urls.append((ANANSI_ALTS, ANANSI_FR_PATH, None))
+write(ANANSI_EN_PATH + "index.html", anansi_page_en()); urls.append((ANANSI_ALTS, ANANSI_EN_PATH, None))
 for slug, vs in NOTES.items():
     for l in vs:
         write(note_path(l, slug) + "index.html", note_page(slug, l))
