@@ -857,7 +857,7 @@ def anansi_page(lang="zh"):
     </header>
 
     <section class="an-ep1" aria-labelledby="ep1">
-      <div class="an-vid"><video controls playsinline preload="metadata" poster="/assets/anansi/ep1-poster.jpg" width="720" height="1280"><source src="/assets/anansi/ep1.mp4" type="video/mp4"></video></div>
+      <div class="an-vid"><video controls playsinline controlslist="nodownload" oncontextmenu="return false" preload="metadata" poster="/assets/anansi/ep1-poster.jpg" width="720" height="1280"><source src="/assets/anansi/ep1.mp4" type="video/mp4"></video></div>
       <div class="an-ep1-t">
         <p class="sh-k">EP1 · 68 秒</p>
         <h2 id="ep1" class="an-h2">智慧罐</h2>
@@ -954,7 +954,7 @@ def anansi_page_fr():
     </header>
 
     <section class="an-ep1" aria-labelledby="ep1">
-      <div class="an-vid"><video controls playsinline preload="metadata" poster="/assets/anansi/ep1-poster-fr.jpg" width="720" height="1280"><source src="/assets/anansi/ep1-fr.mp4" type="video/mp4"></video></div>
+      <div class="an-vid"><video controls playsinline controlslist="nodownload" oncontextmenu="return false" preload="metadata" poster="/assets/anansi/ep1-poster-fr.jpg" width="720" height="1280"><source src="/assets/anansi/ep1-fr.mp4" type="video/mp4"></video></div>
       <div class="an-ep1-t">
         <p class="sh-k">EP1 · 68 secondes</p>
         <h2 id="ep1" class="an-h2">Le pot de la sagesse</h2>
@@ -1047,7 +1047,7 @@ def anansi_page_en():
     </header>
 
     <section class="an-ep1" aria-labelledby="ep1">
-      <div class="an-vid"><video controls playsinline preload="metadata" poster="/assets/anansi/ep1-poster-en.jpg" width="720" height="1280"><source src="/assets/anansi/ep1-en.mp4" type="video/mp4"></video></div>
+      <div class="an-vid"><video controls playsinline controlslist="nodownload" oncontextmenu="return false" preload="metadata" poster="/assets/anansi/ep1-poster-en.jpg" width="720" height="1280"><source src="/assets/anansi/ep1-en.mp4" type="video/mp4"></video></div>
       <div class="an-ep1-t">
         <p class="sh-k">EP1 · 68 seconds</p>
         <h2 id="ep1" class="an-h2">The Pot of Wisdom</h2>
