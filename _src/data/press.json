@@ -1,11 +1,22 @@
 [
   {
+    "date": "2026-11-07",
+    "outlet": {"zh": "關鍵評論網", "en": "The News Lens", "fr": "The News Lens"},
+    "title": {
+      "zh": "在西非職場，我重新理解「準時」：明天不是一個日期，而是意願",
+      "en": "Rethinking “on time” in a West African workplace: “tomorrow” is not a date but an intention",
+      "fr": "Repenser la « ponctualité » dans un bureau d’Afrique de l’Ouest : « demain » n’est pas une date, c’est une intention"
+    },
+    "lang": "zh",
+    "url": "https://www.thenewslens.com/article/270968"
+  },
+  {
     "date": "2026-08-15",
     "outlet": {"zh": "關鍵評論網", "en": "The News Lens", "fr": "The News Lens"},
     "title": {
-      "zh": "在西非職場，我重新理解「效率」",
-      "en": "Rethinking “efficiency” in a West African workplace",
-      "fr": "Repenser « l’efficacité » dans un bureau d’Afrique de l’Ouest"
+      "zh": "在西非職場，我重新理解「效率」：談正事前的聊天也是工作的一部分",
+      "en": "Rethinking “efficiency” in a West African workplace: the small talk before business is part of the work",
+      "fr": "Repenser « l’efficacité » dans un bureau d’Afrique de l’Ouest : la conversation avant les affaires fait partie du travail"
     },
     "lang": "zh",
     "url": "https://www.thenewslens.com/article/269647"
