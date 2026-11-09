@@ -842,8 +842,8 @@ def anansi_page(lang="zh"):
         f'<li class="an-ep"><span class="an-ep-n">{n}</span><span class="an-ep-t">{e(t)}</span><span class="an-ep-o">{e(o)}</span>'
         + (f'<span class="an-ep-s">{e(s)}</span>' if s else "") + "</li>" for n, t, o, s in ANANSI_EPS)
     srcs = "".join(f'<li><a class="il" href="{u}" target="_blank" rel="noopener">{e(t)}</a></li>' for t, u in ANANSI_SRC)
-    game = "https://play.victseng.com/?c=site&utm_source=victseng&utm_medium=website&utm_campaign=anansi"
-    maison = "https://maison.victseng.com/?utm_source=victseng&utm_medium=website&utm_campaign=anansi"
+    game = "https://play.victseng.com/?c=site&utm_source=victseng&utm_medium=referral&utm_campaign=akwaba&utm_content=anansi_zh"
+    maison = "https://maison.victseng.com/?utm_source=victseng&utm_medium=referral&utm_campaign=maison&utm_content=anansi_zh"
     body = f"""
 <main id="main" class="page">
   <article class="wrap art anp">
@@ -853,7 +853,7 @@ def anansi_page(lang="zh"):
       <p class="sh-k">黏土風格動畫系列</p>
       <h1>阿南西講古</h1>
       <p class="an-lede">阿南西是西非阿坎族民間故事裡的蜘蛛。他聰明、貪心又愛面子，常常被自己的聰明害到。這個系列用黏土風格的 3D 動畫重新講他的故事，每一集都寫清楚出自哪個民族、哪本書。</p>
-      <p class="art-m"><span>{e(c['by'])} Victor Tseng 曾浩瑜</span><span>每兩週週四 20:00（台灣時間）更新</span></p>
+      <p class="art-m"><span>{e(c['by'])} Victor Tseng 曾浩瑜</span><span>每週四 20:00（台灣時間）更新</span></p>
     </header>
 
     <section class="an-ep1" aria-labelledby="ep1">
@@ -939,8 +939,8 @@ def anansi_page_fr():
     srcs += '<li><a class="il" href="https://core.ac.uk/download/478450654.pdf" target="_blank" rel="noopener">R. S. Rattray, Akan-Ashanti Folk-Tales (1930), cité dans Legon Journal of the Humanities 30.1 (2019)</a></li>'
     srcs += f'<li><a class="il" href="{ANANSI_SRC[3][1]}" target="_blank" rel="noopener">{e(ANANSI_SRC[3][0])}</a></li>'
     srcs += '<li><a class="il" href="https://adinkrasymbols.org/symbols/ananse-ntentan" target="_blank" rel="noopener">Ananse Ntontan, d’après W. Bruce Willis, The Adinkra Dictionary</a></li>'
-    game = "https://play.victseng.com/?c=site&utm_source=victseng&utm_medium=website&utm_campaign=anansi_fr"
-    maison = "https://maison.victseng.com/?utm_source=victseng&utm_medium=website&utm_campaign=anansi_fr"
+    game = "https://play.victseng.com/?c=site&utm_source=victseng&utm_medium=referral&utm_campaign=akwaba&utm_content=anansi_fr"
+    maison = "https://maison.victseng.com/?utm_source=victseng&utm_medium=referral&utm_campaign=maison&utm_content=anansi_fr"
     body = f"""
 <main id="main" class="page">
   <article class="wrap art anp">
@@ -950,7 +950,7 @@ def anansi_page_fr():
       <p class="sh-k">Série d’animation style pâte à modeler</p>
       <h1>Les contes d'Anansi</h1>
       <p class="an-lede">Anansi est l’araignée des contes du peuple akan, au Ghana et en Côte d’Ivoire, où on l’appelle aussi Kacou Ananzè. Rusé, gourmand et orgueilleux, il se fait souvent piéger par sa propre malice. Cette série raconte ses histoires en animation 3D style pâte à modeler, et chaque épisode précise de quel peuple et de quel livre vient le conte.</p>
-      <p class="art-m"><span>{e(c['by'])} Victor Tseng 曾浩瑜</span><span>Un nouvel épisode un jeudi sur deux</span></p>
+      <p class="art-m"><span>{e(c['by'])} Victor Tseng 曾浩瑜</span><span>Un nouvel épisode chaque jeudi</span></p>
     </header>
 
     <section class="an-ep1" aria-labelledby="ep1">
@@ -1032,8 +1032,8 @@ def anansi_page_en():
     srcs += '<li><a class="il" href="https://core.ac.uk/download/478450654.pdf" target="_blank" rel="noopener">R. S. Rattray, Akan-Ashanti Folk-Tales (1930), cited in Legon Journal of the Humanities 30.1 (2019)</a></li>'
     srcs += f'<li><a class="il" href="{ANANSI_SRC[3][1]}" target="_blank" rel="noopener">{e(ANANSI_SRC[3][0])}</a></li>'
     srcs += '<li><a class="il" href="https://adinkrasymbols.org/symbols/ananse-ntentan" target="_blank" rel="noopener">Ananse Ntontan, as defined in W. Bruce Willis, The Adinkra Dictionary</a></li>'
-    game = "https://play.victseng.com/en.html?c=site&utm_source=victseng&utm_medium=website&utm_campaign=anansi_en"
-    maison = "https://maison.victseng.com/en/?utm_source=victseng&utm_medium=website&utm_campaign=anansi_en"
+    game = "https://play.victseng.com/en.html?c=site&utm_source=victseng&utm_medium=referral&utm_campaign=akwaba&utm_content=anansi_en"
+    maison = "https://maison.victseng.com/en/?utm_source=victseng&utm_medium=referral&utm_campaign=maison&utm_content=anansi_en"
     body = f"""
 <main id="main" class="page">
   <article class="wrap art anp">
@@ -1043,7 +1043,7 @@ def anansi_page_en():
       <p class="sh-k">Clay-style animation series</p>
       <h1>Anansi Tales</h1>
       <p class="an-lede">Anansi is the spider of Akan folktales from Ghana and Côte d'Ivoire, where he is also known as Kacou Ananzè. Clever, greedy and proud, he is often caught out by his own cleverness. This series retells his stories in clay-style 3D animation, and every episode names the people and the book each tale comes from.</p>
-      <p class="art-m"><span>{e(c['by'])} Victor Tseng 曾浩瑜</span><span>A new episode every other Thursday</span></p>
+      <p class="art-m"><span>{e(c['by'])} Victor Tseng 曾浩瑜</span><span>A new episode every Thursday</span></p>
     </header>
 
     <section class="an-ep1" aria-labelledby="ep1">
