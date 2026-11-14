@@ -1,7 +1,26 @@
 [
   {
+    "date": "2026-11-14",
+    "outlet": {
+      "zh": "關鍵評論網",
+      "en": "The News Lens",
+      "fr": "The News Lens"
+    },
+    "title": {
+      "zh": "可可價格腰斬、象牙海岸農民收購價砍半：為什麼你手上的巧克力，沒有跟著變便宜？",
+      "en": "Cocoa prices halved, Ivorian farmgate prices cut in half: why hasn’t the chocolate in your hand got any cheaper?",
+      "fr": "Le prix du cacao divisé par deux, le prix au planteur ivoirien aussi : pourquoi votre chocolat n’est-il pas moins cher ?"
+    },
+    "lang": "zh",
+    "url": "https://www.thenewslens.com/article/271112"
+  },
+  {
     "date": "2026-11-07",
-    "outlet": {"zh": "關鍵評論網", "en": "The News Lens", "fr": "The News Lens"},
+    "outlet": {
+      "zh": "關鍵評論網",
+      "en": "The News Lens",
+      "fr": "The News Lens"
+    },
     "title": {
       "zh": "在西非職場，我重新理解「準時」：明天不是一個日期，而是意願",
       "en": "Rethinking “on time” in a West African workplace: “tomorrow” is not a date but an intention",
@@ -12,7 +31,11 @@
   },
   {
     "date": "2026-08-15",
-    "outlet": {"zh": "關鍵評論網", "en": "The News Lens", "fr": "The News Lens"},
+    "outlet": {
+      "zh": "關鍵評論網",
+      "en": "The News Lens",
+      "fr": "The News Lens"
+    },
     "title": {
       "zh": "在西非職場，我重新理解「效率」：談正事前的聊天也是工作的一部分",
       "en": "Rethinking “efficiency” in a West African workplace: the small talk before business is part of the work",
